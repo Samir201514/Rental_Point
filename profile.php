@@ -3,6 +3,7 @@
 <head>
     <title> Profile </title>
     <link rel="stylesheet" href="CSS/profile.css">
+    <script src="JS/profile.js" defer> </script>
 </head>
 <body>
     <header></header>
@@ -30,15 +31,19 @@
             </p>
         </section>
         
-        <section id="tab">
-            <a href="#about" class="tab"> About </a>
-            <a href="#myPost" class="tab"> My Posts </a>
-            <a href="#savedPost" class="tab"> Saved Posts </a>
-            <a href="#settings" class="tab"> Settings </a>
+        <section id="btnSection">
+            <button class="btn" id="aboutTab"> About </button>
+            <button class="btn" id="postsTab"> My Posts </button>
+            <button class="btn" id="activityTab"> My Activity </button>
+            <button class="btn" id="savedTab"> Saved Posts </button>
+            <button class="btn" id="bookingTab"> Booking </button>
+            <button class="btn" id="reportTab"> Report </button>
+            <button class="btn" id="helpTab"> Help </button>
+            <button class="btn" id="settingsTab"> Settings </button>
             <hr>
         </section>
         
-        <section id="about">
+        <section id="aboutDiv">
             <h3> Personal Information </h3>
             <br>
             
@@ -58,7 +63,35 @@
                 <button> Edit Profile Details </button>
             </div>
         </section>
+
+        <section id="settingsDiv">
+            <div>
+                <h3> Account Settings </h3>
+                <br>
+                <button> Edit Profile Details > </button>
+                <hr>
+                <button> Change Password </button>
+                <hr>
+                <button> Logout </button>
+                <hr>
+                <button id="deleteAccountBtn"> Delete Rental Point Account </button>
+            </div>
+
+            <div>
+
+            </div>
+        </section>
     </main>
+    
+    <div id="popupBg"></div>
+    <div id="deleteAccountPopup">
+        <button> X </button>        
+        <br>
+        <span> Do You Want to Delete Rental Point Account Permanently? </span>
+        <br><br><br>
+        <button id="cancelDeleteBtn"> Cancel </button>
+        <button style="background:rgba(217, 63, 63, 1);"> Yes, Delete Permanently </button>
+    </div>
 
 
     <footer></footer>
