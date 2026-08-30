@@ -1,0 +1,40 @@
+body{
+    background-color: whitesmoke;
+}
+#photo{
+    margin: 25px;
+    padding: 25px;
+    border: 2px solid lightgreen;
+    border-radius: 20px;
+    background-color: rgb(227, 238, 227);
+}
+
+#proPic{
+    display: flex;
+    flex-direction: row;
+    gap: 900px;
+}
+
+#tab{
+    margin: 15px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.tab{
+    text-decoration: none;
+    color: rgb(55, 180, 55);
+    display: inline-block;
+}
+
+hr{
+    border: 1px solid lightgreen;
+}
+
+#about{
+    margin: 25px;
+    padding: 25px;
+    border: 2px solid limegreen;
+    border-radius: 20px;
+    background-color: rgb(227, 238, 227);
+}
