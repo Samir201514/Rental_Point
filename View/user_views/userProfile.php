@@ -83,7 +83,7 @@
         </section>
     </main>
     
-    // Delete Popup
+    // Delete account Popup
     <div id="popupBg"></div>
     <div id="deleteAccountPopup">
         <button> X </button>        
@@ -91,7 +91,7 @@
         <span> Do You Want to Delete Rental Point Account Permanently? </span>
         <br><br><br>
         <button id="cancelDeleteBtn"> Cancel </button>
-        <button style="background:rgba(217, 63, 63, 1);"> Yes, Delete Permanently </button>
+        <button style="background:rgb(214, 63, 63);"> Yes, Delete Permanently </button>
     </div>
 
 
