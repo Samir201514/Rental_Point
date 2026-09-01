@@ -1,3 +1,4 @@
+// switching between tabs
 const btn = document.getElementsByClassName("btn");
 const aboutDiv = document.getElementById("aboutDiv");
 const settingsDiv = document.getElementById("settingsDiv"); 
@@ -15,7 +16,7 @@ btn[7].addEventListener("click", ()=>{
 
 
 
-
+// Delete account popup
 const popupBg = document.getElementById("popupBg");
 popupBg.style.display = "none";
 const deleteAccountPopup = document.getElementById("deleteAccountPopup");
