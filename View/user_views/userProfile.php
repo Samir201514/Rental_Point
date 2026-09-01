@@ -83,6 +83,7 @@
         </section>
     </main>
     
+    // Delete Popup
     <div id="popupBg"></div>
     <div id="deleteAccountPopup">
         <button> X </button>        
