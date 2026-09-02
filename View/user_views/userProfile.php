@@ -33,12 +33,9 @@
         
         <section id="btnSection">
             <button class="btn" id="aboutTab"> About </button>
-            <button class="btn" id="postsTab"> My Posts </button>
             <button class="btn" id="activityTab"> My Activity </button>
+            <button class="btn" id="postsTab"> My Posts </button>
             <button class="btn" id="savedTab"> Saved Posts </button>
-            <button class="btn" id="bookingTab"> Booking </button>
-            <button class="btn" id="reportTab"> Report </button>
-            <button class="btn" id="helpTab"> Help </button>
             <button class="btn" id="settingsTab"> Settings </button>
             <hr>
         </section>
@@ -59,8 +56,73 @@
             <span> Location </span>
             <span> Dhaka </span>
             <hr>
-            <div id="editBtn">
+            <div id="editProfileDetailsBtn">
                 <button> Edit Profile Details </button>
+            </div>
+        </section>
+
+         <section id="myActivityDiv">
+            <h3> Post Views </h3>
+            <div id="postCounts">
+                <br>
+                <div> 
+                    <span> Total Views </span>
+                    <br><br>
+                    <span> 1235 </span>
+                </div>
+                <div> 
+                    <span> Total Saves </span>
+                    <br><br>
+                    <span> 1235 </span>
+                </div>
+                <div> 
+                    <span> Total Contacts </span>
+                    <br><br>
+                    <span> 1235 </span>
+                </div>
+            </div>
+
+                <br><br><br>
+
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> Title </th>
+                                <th> Views </th>
+                                <th> Saves </th>
+                                <th> contacts </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="myPostsDiv">
+            <div>
+                <h3> My Posts </h3>
+                <br>
+            </div>
+
+            <div>
+
+            </div>
+        </section>
+
+            <section id="savedPostsDiv">
+            <div>
+                <h3> Saved Posts </h3>
+                <br>
+            </div>
+
+            <div>
+
             </div>
         </section>
 
@@ -83,7 +145,7 @@
         </section>
     </main>
     
-    // Delete account Popup
+    <!-- Delete account Popup -->
     <div id="popupBg"></div>
     <div id="deleteAccountPopup">
         <button> X </button>        
@@ -91,7 +153,7 @@
         <span> Do You Want to Delete Rental Point Account Permanently? </span>
         <br><br><br>
         <button id="cancelDeleteBtn"> Cancel </button>
-        <button style="background:rgb(214, 63, 63);"> Yes, Delete Permanently </button>
+        <button style="background:rgba(217, 63, 63, 1);"> Yes, Delete Permanently </button>
     </div>
 
 
