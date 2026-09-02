@@ -1,12 +1,13 @@
 body{
-    background-color: E9E7E2;
+    background-color: #E9E7E2;
 }
+
 #photo{
     margin: 25px;
     padding: 25px;
     border: 2px solid rgba(111, 185, 135, 1);
     border-radius: 20px;
-    background-color: FAF8F5;
+    background-color: #FAF8F5;
 }
 
 #proPic{
@@ -31,7 +32,11 @@ hr{
     border: 1px solid rgba(111, 185, 135, 1);
 }
 
-#aboutDiv{
+#myActivityDiv, #myPostsDiv,  #savedPostsDiv, #settingsDiv, #popupBg, #deleteAccountPopup{
+    display: none;
+}
+
+#aboutDiv, #myActivityDiv, #myPostsDiv,  #savedPostsDiv, #settingsDiv{
     margin: 25px;
     padding: 25px;
     border: 2px solid rgba(111, 185, 135, 1);
@@ -39,12 +44,14 @@ hr{
     background-color: rgb(227, 238, 227);
 }
 
-#settingsDiv{
-    margin: 25px;
-    padding: 25px;
-    border: 2px solid rgba(111, 185, 135, 1);
-    border-radius: 20px;
-    background-color: rgb(227, 238, 227);
+#postCounts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 500px;
+    height: 150px;
+    font-size: 25px;
+    background-color: rgb(39, 216, 39);
 }
 
 #popupBg{
