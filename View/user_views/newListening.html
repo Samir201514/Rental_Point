@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create New Listing</title>
+    <link rel="stylesheet" href="newListeningstyle.css">
+</head>
+
+<body>
+
+    <h1>Rental Point</h1>
+
+    <form>
+
+        <fieldset>
+            <legend>Create a New Listing</legend>
+
+            <h3>Basic Information</h3>
+
+            <label>Post Title:</label>
+            <input type="text" placeholder="Enter property title">
+            <br><br>
+
+            <label>Property Type:</label>
+            <select>
+                <option>Select Property Type</option>
+                <option>Apartment</option>
+                <option>House</option>
+                <option>Room</option>
+            </select>
+
+            <br><br>
+
+            <label>Furnishing Status:</label>
+            <select>
+                <option>Select Furnishing</option>
+                <option>Fully Furnished</option>
+                <option>Semi Furnished</option>
+                <option>Unfurnished</option>
+            </select>
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Location</legend>
+
+            <label>Division:</label>
+            <select>
+                <option>Dhaka</option>
+                <option>Rajshahi</option>
+                <option>Chittagong</option>
+                <option>Sylhet</option>
+            </select>
+
+            <br><br>
+
+            <label>District:</label>
+            <input type="text" placeholder="Enter district">
+
+            <br><br>
+
+            <label>Area:</label>
+            <input type="text" placeholder="Enter area">
+
+            <br><br>
+
+            <label>Road Name / Number:</label>
+            <input type="text" placeholder="Enter road">
+
+            <br><br>
+
+            <label>Nearby Landmark:</label>
+            <input type="text" placeholder="Enter landmark">
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Property Details</legend>
+
+            <label>Bedrooms:</label>
+            <select>
+                <option>Select Bedrooms</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+
+            <br><br>
+
+            <label>Bathrooms:</label>
+            <select>
+                <option>Select Bathrooms</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+
+            <br><br>
+
+            <label>Property Size:</label>
+            <input type="number" placeholder="e.g. 1450">
+
+            <br><br>
+
+            <label>Floor Number:</label>
+            <input type="number" placeholder="e.g. 4">
+
+            <br><br>
+
+            <label>Total Floors:</label>
+            <input type="number" placeholder="e.g. 10">
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Pricing</legend>
+
+            <label>Monthly Rent:</label>
+            <input type="number" placeholder="e.g. 35000">
+
+            <br><br>
+
+            <label>Service Charge:</label>
+            <input type="number" placeholder="e.g. 5000">
+
+            <br><br>
+
+            <label>Security Deposit:</label>
+            <input type="number" placeholder="e.g. 70000">
+
+            <br><br>
+
+            <input type="checkbox">
+            <label>Rent is negotiable</label>
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Amenities & Features</legend>
+
+            <input type="checkbox"> Lift / Elevator
+            <br>
+
+            <input type="checkbox"> Car Parking
+            <br>
+
+            <input type="checkbox"> Generator Backup
+            <br>
+
+            <input type="checkbox"> Gas Supply
+            <br>
+
+            <input type="checkbox"> Water Supply
+            <br>
+
+            <input type="checkbox"> Wi-Fi Internet
+            <br>
+
+            <input type="checkbox"> Security Guard
+            <br>
+
+            <input type="checkbox"> Attached Balcony
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Tenant Preferences</legend>
+
+            <label>Allowed Tenants:</label>
+
+            <input type="radio" name="tenant"> Family
+            <input type="radio" name="tenant"> Bachelor
+            <input type="radio" name="tenant"> Student
+
+            <br><br>
+
+            <label>Gender Preference:</label>
+
+            <input type="radio" name="gender"> Any
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Availability</legend>
+
+            <label>Available From:</label>
+            <input type="date">
+
+            <br><br>
+
+            <label>Minimum Stay Period:</label>
+            <select>
+                <option>Select Period</option>
+                <option>3 Months</option>
+                <option>6 Months</option>
+                <option>1 Year</option>
+            </select>
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Property Media</legend>
+
+            <label>Upload Property Picture:</label>
+            <input type="file" accept="image/*">
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Detailed Description</legend>
+
+            <textarea rows="6" cols="50"
+                placeholder="Describe your property..."></textarea>
+
+        </fieldset>
+
+
+        <input type="submit" value="Publish Post">
+        <input type="reset" value="Reset">
+
+    </form>
+
+</body>
+
+</html>
