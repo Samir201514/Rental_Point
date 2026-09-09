@@ -8,7 +8,6 @@
 <body>
     <header></header>
 
-
     <main>
         <section id="photo">
             <div id="cover">
@@ -32,15 +31,15 @@
         </section>
         
         <section id="btnSection">
-            <button class="btn" id="aboutTab"> About </button>
-            <button class="btn" id="activityTab"> My Activity </button>
-            <button class="btn" id="postsTab"> My Posts </button>
-            <button class="btn" id="savedTab"> Saved Posts </button>
-            <button class="btn" id="settingsTab"> Settings </button>
+            <button class="btn"> About </button>
+            <button class="btn"> My Activity </button>
+            <button class="btn"> My Posts </button>
+            <button class="btn"> Saved Posts </button>
+            <button class="btn"> Settings </button>
             <hr>
         </section>
         
-        <section id="aboutDiv">
+        <section id="aboutTab">
             <h3> Personal Information </h3>
             <br>
             
@@ -61,50 +60,49 @@
             </div>
         </section>
 
-         <section id="myActivityDiv">
-            <h3> Post Views </h3>
-            <div id="postCounts">
-                <br>
-                <div> 
-                    <span> Total Views </span>
-                    <br><br>
-                    <span> 1235 </span>
+         <section id="activityTab">
+                <h3> Post Views </h3>
+                <div id="postCounts">
+                    <br>
+                    <div> 
+                        <span> Total Views </span>
+                        <br><br>
+                        <span> 1235 </span>
+                    </div>
+                    <div> 
+                        <span> Total Saves </span>
+                        <br><br>
+                        <span> 1235 </span>
+                    </div>
+                    <div> 
+                        <span> Total Contacts </span>
+                        <br><br>
+                        <span> 1235 </span>
+                    </div>
                 </div>
-                <div> 
-                    <span> Total Saves </span>
-                    <br><br>
-                    <span> 1235 </span>
-                </div>
-                <div> 
-                    <span> Total Contacts </span>
-                    <br><br>
-                    <span> 1235 </span>
-                </div>
-            </div>
-
-                <br><br><br>
-
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th> Title </th>
-                                <th> Views </th>
-                                <th> Saves </th>
-                                <th> contacts </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td> </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    
+                    <br><br><br>
+    
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> Title </th>
+                                    <th> Views </th>
+                                    <th> Saves </th>
+                                    <th> contacts </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
         </section>
 
-        <section id="myPostsDiv">
+        <section id="postsTab">
             <div>
                 <h3> My Posts </h3>
                 <br>
@@ -115,7 +113,7 @@
             </div>
         </section>
 
-            <section id="savedPostsDiv">
+        <section id="savedTab">
             <div>
                 <h3> Saved Posts </h3>
                 <br>
@@ -126,7 +124,7 @@
             </div>
         </section>
 
-        <section id="settingsDiv">
+        <section id="settingsTab">
             <div>
                 <h3> Account Settings </h3>
                 <br>
