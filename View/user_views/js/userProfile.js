@@ -1,5 +1,6 @@
 // switching between tabs
 const btn = document.getElementsByClassName("btn");
+const propertyVerifyTab = document.getElementById("propertyVerifyTab");
 const aboutTab = document.getElementById("aboutTab");
 const activityTab = document.getElementById("activityTab");
 const postsTab = document.getElementById("postsTab");
@@ -7,6 +8,7 @@ const savedTab = document.getElementById("savedTab");
 const settingsTab = document.getElementById("settingsTab");
 
 btn[0].addEventListener("click", ()=>{
+    propertyVerifyTab.style.display = "block";
     aboutTab.style.display = "block";
     activityTab.style.display = "none";
     postsTab.style.display = "none";
@@ -15,6 +17,7 @@ btn[0].addEventListener("click", ()=>{
 });
 
 btn[1].addEventListener("click", ()=>{
+    propertyVerifyTab.style.display = "none";
     aboutTab.style.display = "none";
     activityTab.style.display = "block";
     postsTab.style.display = "none";
@@ -23,6 +26,7 @@ btn[1].addEventListener("click", ()=>{
 });
 
 btn[2].addEventListener("click", ()=>{
+    propertyVerifyTab.style.display = "none";
     aboutTab.style.display = "none";
     activityTab.style.display = "none";
     postsTab.style.display = "block";
@@ -31,6 +35,7 @@ btn[2].addEventListener("click", ()=>{
 });
 
 btn[3].addEventListener("click", ()=>{
+    propertyVerifyTab.style.display = "none";
     aboutTab.style.display = "none";
     activityTab.style.display = "none";
     postsTab.style.display = "none";
@@ -39,6 +44,7 @@ btn[3].addEventListener("click", ()=>{
 });
 
 btn[4].addEventListener("click", ()=>{
+    propertyVerifyTab.style.display = "none";
     aboutTab.style.display = "none";
     activityTab.style.display = "none";
     postsTab.style.display = "none";

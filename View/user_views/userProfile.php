@@ -9,25 +9,22 @@
     <header></header>
 
     <main>
-        <section id="photo">
-            <div id="cover">
-                <img src="" width="500px">
+        <section id="intro">
+            <div id="userProPic">
+                <img src="../../Storage/User/Profile/default.png" alt="Error" width="150px">
             </div>
 
-            <div id="proPic">
-                <div id="picName">
-                    <h2 id="userName"> <i> Name </i> </h2>
-                    <span> ✅ Verified </span>
-                    <br>
-                    <span id="userType"> Type </span>
-                    <span> . </span>
-                    <span id="userLocation"> Location </span>
-                </div>
+            <div id="userInfo">
+                <h2> 
+                    <i> MD. ARAFAT RAHMAN SAMIR </i> 
+                </h2>
+                
+                <span> ✅ Verified </span>
+                
+                <span> Owner </span>
+                <span> . </span>
+                <span> Mirpur, Dhaka </span>
             </div>
-            
-            <p id="bio">
-                My Bio
-            </p>
         </section>
         
         <section id="btnSection">
@@ -39,6 +36,18 @@
             <hr>
         </section>
         
+
+        <section id="propertyVerifyTab">
+            <h3> Property Verification </h3>
+            <span> Upload your property document(in pdf) to get verfiy badge</span>
+            <br><br>
+            <form action="../../Controller/propertyVerificationController.php" method="POST" enctype="multipart/form-data">
+                <input type="file" name="VerifyDocPath">
+                <br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
         <section id="aboutTab">
             <h3> Personal Information </h3>
             <br>
@@ -67,39 +76,42 @@
                     <div> 
                         <span> Total Views </span>
                         <br><br>
-                        <span> 1235 </span>
+                        <span class="counts"> 1235 </span>
                     </div>
                     <div> 
                         <span> Total Saves </span>
                         <br><br>
-                        <span> 1235 </span>
+                        <span class="counts"> 1235 </span>
                     </div>
                     <div> 
                         <span> Total Contacts </span>
                         <br><br>
-                        <span> 1235 </span>
+                        <span class="counts"> 1235 </span>
                     </div>
                 </div>
     
-                    <br><br><br>
+                <br><br><br>
     
-                    <div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th> Title </th>
-                                    <th> Views </th>
-                                    <th> Saves </th>
-                                    <th> contacts </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td> </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th> Title </th>
+                                <th> Views </th>
+                                <th> Saves </th>
+                                <th> contacts </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> 2 Master Bedrooms </td>
+                                <td> 50 </td>
+                                <td> 10 </td>
+                                <td> 03 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
         </section>
 
         <section id="postsTab">

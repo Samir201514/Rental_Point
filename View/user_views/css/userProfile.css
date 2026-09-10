@@ -1,19 +1,22 @@
 body{
-    background-color: #E9E7E2;
+    background-color: #FAF8F5;
 }
 
-#photo{
+#intro{
     margin: 25px;
     padding: 25px;
     border: 2px solid rgba(111, 185, 135, 1);
     border-radius: 20px;
-    background-color: #FAF8F5;
+    background-color: rgb(227, 238, 227);
 }
 
-#proPic{
-    display: flex;
-    flex-direction: row;
-    gap: 900px;
+#userProPic{
+    position: relative;
+    left: 500px;
+}
+
+#userInfo{
+    text-align: center;
 }
 
 #btnSection{
@@ -36,13 +39,17 @@ hr{
     display: none;
 }
 
-#aboutTab, #activityTab, #postsTab,  #savedTab, #settingsTab{
+#propertyVerifyTab, #aboutTab, #activityTab, #postsTab,  #savedTab, #settingsTab{
     margin: 25px;
     padding: 25px;
     border: 2px solid rgba(111, 185, 135, 1);
     border-radius: 20px;
     background-color: rgb(227, 238, 227);
 }
+
+/* .counts{
+
+} */
 
 #postCounts{
     display: flex;
