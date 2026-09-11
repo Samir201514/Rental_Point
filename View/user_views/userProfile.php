@@ -9,12 +9,9 @@
     <header></header>
 
     <main>
-        <section id="intro">
-            <div id="userProPic">
+        <section id="userIntroTab">
                 <img src="../../Storage/User/Profile/default.png" alt="Error" width="150px">
-            </div>
 
-            <div id="userInfo">
                 <h2> 
                     <i> MD. ARAFAT RAHMAN SAMIR </i> 
                 </h2>
@@ -24,7 +21,6 @@
                 <span> Owner </span>
                 <span> . </span>
                 <span> Mirpur, Dhaka </span>
-            </div>
         </section>
         
         <section id="btnSection">
@@ -39,6 +35,7 @@
 
         <section id="propertyVerifyTab">
             <h3> Property Verification </h3>
+            <hr> <br>
             <span> Upload your property document(in pdf) to get verfiy badge</span>
             <br><br>
             <form action="../../Controller/propertyVerificationController.php" method="POST" enctype="multipart/form-data">
@@ -50,8 +47,8 @@
 
         <section id="aboutTab">
             <h3> Personal Information </h3>
-            <br>
-            
+            <hr> <br>
+
             <span> Name </span>
             <span> Samir </span>
             <hr>
@@ -61,10 +58,10 @@
             <span> Phone </span>
             <span> 01575431438 </span>
             <hr>
-            <span> Location </span>
+            <span> Current Location </span>
             <span> Dhaka </span>
             <hr>
-            <div id="editProfileDetailsBtn">
+            <div class="editProfileDetailsBtn">
                 <button> Edit Profile Details </button>
             </div>
         </section>
@@ -140,7 +137,7 @@
             <div>
                 <h3> Account Settings </h3>
                 <br>
-                <button> Edit Profile Details > </button>
+                <button class="editProfileDetailsBtn"> Edit Profile Details > </button>
                 <hr>
                 <button> Change Password </button>
                 <hr>
@@ -152,6 +149,30 @@
             <div>
 
             </div>
+        </section>
+
+        <section id="userPrefTab">
+            <h3> Preference </h3>
+            <hr><br>
+            
+            <span> Looking For </span>
+            <span> Roomate </span>
+            <hr>
+            <span> Budget Range </span>
+            <span> MinBudget to MaxBudget </span>
+            <hr>
+            <span> Location </span>
+            <span> Mirpur, Dhaka </span>
+            <hr>
+            <span> Move In Date </span>
+            <span> 01 Oct 2026 </span>
+            <hr>
+            <span> Occupation </span>
+            <span> Software Engineer </span>
+            <hr>
+            <!-- <div id="editUserPrefBtn">
+                <button> Edit Preference Details </button>
+            </div> -->
         </section>
     </main>
     

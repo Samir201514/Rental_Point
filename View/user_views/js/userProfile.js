@@ -6,6 +6,7 @@ const activityTab = document.getElementById("activityTab");
 const postsTab = document.getElementById("postsTab");
 const savedTab = document.getElementById("savedTab");
 const settingsTab = document.getElementById("settingsTab");
+const userPrefTab = document.getElementById("userPrefTab");
 
 btn[0].addEventListener("click", ()=>{
     propertyVerifyTab.style.display = "block";
@@ -14,6 +15,7 @@ btn[0].addEventListener("click", ()=>{
     postsTab.style.display = "none";
     savedTab.style.display = "none";
     settingsTab.style.display = "none";
+    userPrefTab.style.display = "block";
 });
 
 btn[1].addEventListener("click", ()=>{
@@ -23,6 +25,7 @@ btn[1].addEventListener("click", ()=>{
     postsTab.style.display = "none";
     savedTab.style.display = "none";
     settingsTab.style.display = "none";
+    userPrefTab.style.display = "none";
 });
 
 btn[2].addEventListener("click", ()=>{
@@ -32,6 +35,7 @@ btn[2].addEventListener("click", ()=>{
     postsTab.style.display = "block";
     savedTab.style.display = "none";
     settingsTab.style.display = "none";
+    userPrefTab.style.display = "none";
 });
 
 btn[3].addEventListener("click", ()=>{
@@ -41,6 +45,7 @@ btn[3].addEventListener("click", ()=>{
     postsTab.style.display = "none";
     savedTab.style.display = "block";
     settingsTab.style.display = "none";
+    userPrefTab.style.display = "none";
 });
 
 btn[4].addEventListener("click", ()=>{
@@ -50,13 +55,17 @@ btn[4].addEventListener("click", ()=>{
     postsTab.style.display = "none";
     savedTab.style.display = "none";
     settingsTab.style.display = "block";
+    userPrefTab.style.display = "none";
 });
 
 
 // editProfileDetailsBtn
-const editProfileDetailsBtn = document.getElementById("editProfileDetailsBtn");
-editProfileDetailsBtn.addEventListener("click", ()=>{
-    // window.location.href = "../../Controller/editUserProfile.php"
+const editProfileDetailsBtn = document.getElementsByClassName("editProfileDetailsBtn");
+editProfileDetailsBtn[0].addEventListener("click", ()=>{
+    window.location.href = "editUserProfile.php";
+})
+editProfileDetailsBtn[1].addEventListener("click", ()=>{
+    window.location.href = "editUserProfile.php";
 })
 
 
