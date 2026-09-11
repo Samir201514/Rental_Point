@@ -139,7 +139,7 @@
                 <br>
                 <button class="editProfileDetailsBtn"> Edit Profile Details > </button>
                 <hr>
-                <button> Change Password </button>
+                <button id="changePassword"> Change Password </button>
                 <hr>
                 <button> Logout </button>
                 <hr>
@@ -176,8 +176,8 @@
         </section>
     </main>
     
-    <!-- Delete account Popup -->
     <div id="popupBg"></div>
+    <!-- Delete account Popup -->
     <div id="deleteAccountPopup">
         <button> X </button>        
         <br>
@@ -185,6 +185,26 @@
         <br><br><br>
         <button id="cancelDeleteBtn"> Cancel </button>
         <button style="background:rgba(217, 63, 63, 1);"> Yes, Delete Permanently </button>
+    </div>
+
+    <!-- Change Password Popup -->
+    <div id="changePasswordPopup">
+        <h3> Change Password </h3>
+        <button> X </button>        
+        <br>
+        <form action="../../Controller/changePasswordController.php">
+            <label for="currentPassword"> Current Password </label>
+            <input type="password" name="currentPassword">
+            <hr>
+            <label for="NewPassword"> Enter New Password </label>
+            <input type="password" name="NewPassword">
+            <hr>
+            <label for="againNewPassword"> Enter New Password Again </label>
+            <input type="password" name="againNewPassword">
+            <hr>
+            <button id="cancelChangePasswordBtn"> Cancel </button>
+            <input type="submit" name="saveNewPassword" value="Save New Password" style="background:rgba(111, 185, 135, 1);">
+        </form>
     </div>
 
 

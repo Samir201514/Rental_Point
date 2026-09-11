@@ -69,8 +69,8 @@ editProfileDetailsBtn[1].addEventListener("click", ()=>{
 })
 
 
-// Delete account popup
 const popupBg = document.getElementById("popupBg");
+// Delete account popup
 const deleteAccountPopup = document.getElementById("deleteAccountPopup");
 
 const deleteAccountBtn = document.getElementById("deleteAccountBtn");
@@ -81,6 +81,22 @@ deleteAccountBtn.addEventListener("click", ()=>{
 
 const cancelDeleteBtn = document.getElementById("cancelDeleteBtn")
 cancelDeleteBtn.addEventListener("click", ()=>{
+    deleteAccountPopup.style.display = "none";
+    popupBg.style.display = "none";
+})
+
+
+// Change Password Popup
+const changePasswordPopup = document.getElementById("changePasswordPopup");
+
+const changePassword = document.getElementById("changePassword");
+changePassword.addEventListener("click", ()=>{
+    changePasswordPopup.style.display = "block";
+    popupBg.style.display = "block";
+});
+
+const cancelChangePasswordBtn = document.getElementById("cancelChangePasswordBtn")
+cancelChangePasswordBtn.addEventListener("click", ()=>{
     deleteAccountPopup.style.display = "none";
     popupBg.style.display = "none";
 })
