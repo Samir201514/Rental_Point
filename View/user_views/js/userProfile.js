@@ -70,6 +70,39 @@ editProfileDetailsBtn[1].addEventListener("click", ()=>{
 
 
 const popupBg = document.getElementById("popupBg");
+
+// Change Password Popup
+const changePasswordPopup = document.getElementById("changePasswordPopup");
+
+const changePasswordBtn = document.getElementById("changePasswordBtn");
+changePasswordBtn.addEventListener("click", ()=>{
+    changePasswordPopup.style.display = "block";
+    popupBg.style.display = "block";
+});
+
+const cancelChangePasswordBtn = document.getElementById("cancelChangePasswordBtn")
+cancelChangePasswordBtn.addEventListener("click", ()=>{
+    changePasswordPopup.style.display = "none";
+    popupBg.style.display = "none";
+})
+
+
+// Logout popup
+const logoutPopup = document.getElementById("logoutPopup");
+
+const LogoutBtn = document.getElementById("LogoutBtn");
+LogoutBtn.addEventListener("click", ()=>{
+    logoutPopup.style.display = "block";
+    popupBg.style.display = "block";
+});
+
+const cancelLogoutBtn = document.getElementById("cancelLogoutBtn")
+cancelLogoutBtn.addEventListener("click", ()=>{
+    logoutPopup.style.display = "none";
+    popupBg.style.display = "none";
+})
+
+
 // Delete account popup
 const deleteAccountPopup = document.getElementById("deleteAccountPopup");
 
@@ -81,22 +114,6 @@ deleteAccountBtn.addEventListener("click", ()=>{
 
 const cancelDeleteBtn = document.getElementById("cancelDeleteBtn")
 cancelDeleteBtn.addEventListener("click", ()=>{
-    deleteAccountPopup.style.display = "none";
-    popupBg.style.display = "none";
-})
-
-
-// Change Password Popup
-const changePasswordPopup = document.getElementById("changePasswordPopup");
-
-const changePassword = document.getElementById("changePassword");
-changePassword.addEventListener("click", ()=>{
-    changePasswordPopup.style.display = "block";
-    popupBg.style.display = "block";
-});
-
-const cancelChangePasswordBtn = document.getElementById("cancelChangePasswordBtn")
-cancelChangePasswordBtn.addEventListener("click", ()=>{
     deleteAccountPopup.style.display = "none";
     popupBg.style.display = "none";
 })

@@ -66,20 +66,47 @@
             </div>
         </section>
 
+
+        <section id="userPrefTab">
+            <h3> Preference </h3>
+            <hr><br>
+            
+            <span> Looking For </span>
+            <span> Roomate </span>
+            <hr>
+            <span> Budget Range </span>
+            <span> MinBudget to MaxBudget </span>
+            <hr>
+            <span> Location </span>
+            <span> Mirpur, Dhaka </span>
+            <hr>
+            <span> Move In Date </span>
+            <span> 01 Oct 2026 </span>
+            <hr>
+            <span> Occupation </span>
+            <span> Software Engineer </span>
+            <hr>
+            <!-- <div id="editUserPrefBtn">
+                <button> Edit Preference Details </button>
+            </div> -->
+        </section>
+
          <section id="activityTab">
                 <h3> Post Views </h3>
-                <div id="postCounts">
-                    <br>
+                <br>
+                <div id="viewCounts">
                     <div> 
                         <span> Total Views </span>
                         <br><br>
                         <span class="counts"> 1235 </span>
                     </div>
+
                     <div> 
                         <span> Total Saves </span>
                         <br><br>
                         <span class="counts"> 1235 </span>
                     </div>
+
                     <div> 
                         <span> Total Contacts </span>
                         <br><br>
@@ -87,9 +114,10 @@
                     </div>
                 </div>
     
-                <br><br><br>
+                <br><br><br><hr>
     
-                <div>
+                <div id="viewPerPost">
+                    <h3> Per-Post Analytics </h3>
                     <table border="1">
                         <thead>
                             <tr>
@@ -108,6 +136,46 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <br><br><br><hr>
+    
+                <div id="bookingRequests">
+                    <h3> Booking Requests </h3>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th> Name </th>
+                                <th> Post Title </th>
+                                <th> Preferred Date-Time </th>
+                                <th> Message </th>
+                                <th> Status </th>
+                                <th> Actions </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> 
+                                    MD. ARAFAT RAHMAN SAMIR 
+                                </td>
+                                <td> 2 Master Bedrooms </td>
+                                <td> 10 Sep 10.30 </td>
+                                <td> Booking </td>
+                                <td> Pending </td>
+                                <td> 
+                                    <button> Reject </button>
+                                    <button> Approve </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br><br><br><hr>
+
+                <div id="myReports">
+                    <h3> My Reports </h3>
+                    
                 </div>
         </section>
 
@@ -139,9 +207,9 @@
                 <br>
                 <button class="editProfileDetailsBtn"> Edit Profile Details > </button>
                 <hr>
-                <button id="changePassword"> Change Password </button>
+                <button id="changePasswordBtn"> Change Password </button>
                 <hr>
-                <button> Logout </button>
+                <button id="LogoutBtn"> Logout </button>
                 <hr>
                 <button id="deleteAccountBtn"> Delete Rental Point Account </button>
             </div>
@@ -150,63 +218,49 @@
 
             </div>
         </section>
-
-        <section id="userPrefTab">
-            <h3> Preference </h3>
-            <hr><br>
-            
-            <span> Looking For </span>
-            <span> Roomate </span>
-            <hr>
-            <span> Budget Range </span>
-            <span> MinBudget to MaxBudget </span>
-            <hr>
-            <span> Location </span>
-            <span> Mirpur, Dhaka </span>
-            <hr>
-            <span> Move In Date </span>
-            <span> 01 Oct 2026 </span>
-            <hr>
-            <span> Occupation </span>
-            <span> Software Engineer </span>
-            <hr>
-            <!-- <div id="editUserPrefBtn">
-                <button> Edit Preference Details </button>
-            </div> -->
-        </section>
-    </main>
     
-    <div id="popupBg"></div>
-    <!-- Delete account Popup -->
-    <div id="deleteAccountPopup">
-        <button> X </button>        
-        <br>
-        <span> Do You Want to Delete Rental Point Account Permanently? </span>
-        <br><br><br>
-        <button id="cancelDeleteBtn"> Cancel </button>
-        <button style="background:rgba(217, 63, 63, 1);"> Yes, Delete Permanently </button>
-    </div>
+        <div id="popupBg"></div>
 
-    <!-- Change Password Popup -->
-    <div id="changePasswordPopup">
-        <h3> Change Password </h3>
-        <button> X </button>        
-        <br>
-        <form action="../../Controller/changePasswordController.php">
-            <label for="currentPassword"> Current Password </label>
-            <input type="password" name="currentPassword">
-            <hr>
-            <label for="NewPassword"> Enter New Password </label>
-            <input type="password" name="NewPassword">
-            <hr>
-            <label for="againNewPassword"> Enter New Password Again </label>
-            <input type="password" name="againNewPassword">
-            <hr>
-            <button id="cancelChangePasswordBtn"> Cancel </button>
-            <input type="submit" name="saveNewPassword" value="Save New Password" style="background:rgba(111, 185, 135, 1);">
-        </form>
-    </div>
+        <!-- Change Password Popup -->
+        <div id="changePasswordPopup">
+            <h3> Change Password </h3>
+            <button> X </button>        
+            <br>
+            <form action="../../Controller/changePasswordController.php">
+                <label for="currentPassword"> Current Password </label>
+                <input type="password" name="currentPassword">
+                <hr>
+                <label for="NewPassword"> Enter New Password </label>
+                <input type="password" name="NewPassword">
+                <hr>
+                <label for="againNewPassword"> Enter New Password Again </label>
+                <input type="password" name="againNewPassword">
+                <hr>
+                <input type="button" id="cancelChangePasswordBtn"  value="Cancel">
+                <input type="submit" name="saveNewPassword" value="Save New Password" style="background:rgba(111, 185, 135, 1);">
+            </form>
+        </div>
 
+        <!-- Logout Popup -->
+        <div id="logoutPopup">
+            <button> X </button>        
+            <br>
+            <span> Do You Want to Logout? </span>
+            <br><br><br>
+            <button id="cancelLogoutBtn"> No </button>
+            <button id="confirmLogoutBtn" style="background:rgba(217, 63, 63, 1);"> Yes </button>
+        </div>
+
+         <!-- Delete account Popup -->
+        <div id="deleteAccountPopup">
+            <button> X </button>        
+            <br>
+            <span> Do You Want to Delete Rental Point Account Permanently? </span>
+            <br><br><br>
+            <button id="cancelDeleteBtn"> Cancel </button>
+            <button style="background:rgba(217, 63, 63, 1);"> Yes, Delete Permanently </button>
+        </div>
+    </main>
 
     <footer></footer>
 </body>

@@ -22,7 +22,7 @@ hr{
     border: 1px solid rgba(111, 185, 135, 1);
 }
 
-#activityTab, #postsTab, #savedTab, #settingsTab, #popupBg, #changePasswordPopup, #deleteAccountPopup{
+#activityTab, #postsTab, #savedTab, #settingsTab, #popupBg, #changePasswordPopup, #logoutPopup, #deleteAccountPopup{
     display: none;
 }
 
@@ -71,6 +71,18 @@ hr{
     padding: 15px;
     border: 2px solid rgba(111, 185, 135, 1);
     background-color: #FAF8F5;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+}
+
+#logoutPopup{
+    width: 250px;
+    padding: 15px;
+    border: 2px solid red;
+    background-color: rgba(254, 236, 236, 1);
 
     position: fixed;
     top: 50%;
