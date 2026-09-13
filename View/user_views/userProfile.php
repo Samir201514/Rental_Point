@@ -8,42 +8,47 @@
 <body>
     <header></header>
 
-
     <main>
-        <section id="photo">
-            <div id="cover">
-                <img src="" width="500px">
-            </div>
+        <section id="userIntroTab">
+                <img src="../../Storage/User/Profile/default.png" alt="Error" width="150px">
 
-            <div id="proPic">
-                <div id="picName">
-                    <h2 id="userName"> <i> Name </i> </h2>
-                    <span> ✅ Verified </span>
-                    <br>
-                    <span id="userType"> Type </span>
-                    <span> . </span>
-                    <span id="userLocation"> Location </span>
-                </div>
-            </div>
-            
-            <p id="bio">
-                My Bio
-            </p>
+                <h2> 
+                    <i> MD. ARAFAT RAHMAN SAMIR </i> 
+                </h2>
+                
+                <span> ✅ Verified </span>
+                
+                <span> Owner </span>
+                <span> . </span>
+                <span> Mirpur, Dhaka </span>
         </section>
         
         <section id="btnSection">
-            <button class="btn" id="aboutTab"> About </button>
-            <button class="btn" id="activityTab"> My Activity </button>
-            <button class="btn" id="postsTab"> My Posts </button>
-            <button class="btn" id="savedTab"> Saved Posts </button>
-            <button class="btn" id="settingsTab"> Settings </button>
+            <button class="btn"> About </button>
+            <button class="btn"> My Activity </button>
+            <button class="btn"> My Posts </button>
+            <button class="btn"> Saved Posts </button>
+            <button class="btn"> Settings </button>
             <hr>
         </section>
         
-        <section id="aboutDiv">
+
+        <section id="propertyVerifyTab">
+            <h3> Property Verification </h3>
+            <hr> <br>
+            <span> Upload your property document(in pdf) to get verfiy badge</span>
+            <br><br>
+            <form action="../../Controller/propertyVerificationController.php" method="POST" enctype="multipart/form-data">
+                <input type="file" name="VerifyDocPath">
+                <br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <section id="aboutTab">
             <h3> Personal Information </h3>
-            <br>
-            
+            <hr> <br>
+
             <span> Name </span>
             <span> Samir </span>
             <hr>
@@ -53,39 +58,67 @@
             <span> Phone </span>
             <span> 01575431438 </span>
             <hr>
-            <span> Location </span>
+            <span> Current Location </span>
             <span> Dhaka </span>
             <hr>
-            <div id="editProfileDetailsBtn">
+            <div class="editProfileDetailsBtn">
                 <button> Edit Profile Details </button>
             </div>
         </section>
 
-         <section id="myActivityDiv">
-            <h3> Post Views </h3>
-            <div id="postCounts">
+
+        <section id="userPrefTab">
+            <h3> Preference </h3>
+            <hr><br>
+            
+            <span> Looking For </span>
+            <span> Roomate </span>
+            <hr>
+            <span> Budget Range </span>
+            <span> MinBudget to MaxBudget </span>
+            <hr>
+            <span> Location </span>
+            <span> Mirpur, Dhaka </span>
+            <hr>
+            <span> Move In Date </span>
+            <span> 01 Oct 2026 </span>
+            <hr>
+            <span> Occupation </span>
+            <span> Software Engineer </span>
+            <hr>
+            <!-- <div id="editUserPrefBtn">
+                <button> Edit Preference Details </button>
+            </div> -->
+        </section>
+
+         <section id="activityTab">
+                <h3> Post Views </h3>
                 <br>
-                <div> 
-                    <span> Total Views </span>
-                    <br><br>
-                    <span> 1235 </span>
-                </div>
-                <div> 
-                    <span> Total Saves </span>
-                    <br><br>
-                    <span> 1235 </span>
-                </div>
-                <div> 
-                    <span> Total Contacts </span>
-                    <br><br>
-                    <span> 1235 </span>
-                </div>
-            </div>
+                <div id="viewCounts">
+                    <div class="counts"> 
+                        <span> Total Views </span>
+                        <br><br>
+                        <span class="numbers"> 1235 </span>
+                    </div>
 
-                <br><br><br>
+                    <div class="counts"> 
+                        <span> Total Saves </span>
+                        <br><br>
+                        <span class="numbers"> 1235 </span>
+                    </div>
 
-                <div>
-                    <table>
+                    <div class="counts"> 
+                        <span> Total Contacts </span>
+                        <br><br>
+                        <span class="numbers"> 1235 </span>
+                    </div>
+                </div>
+    
+                <br><br><br><hr>
+    
+                <div id="viewPerPost">
+                    <h3> Per-Post Analytics </h3>
+                    <table border="1">
                         <thead>
                             <tr>
                                 <th> Title </th>
@@ -96,66 +129,191 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td> </td>
+                                <td> 2 Master Bedrooms </td>
+                                <td> 50 </td>
+                                <td> 10 </td>
+                                <td> 03 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+
+                <br><br><br><hr>
+    
+                <div id="bookingRequests">
+                    <h3> Booking Requests </h3>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th> Name </th>
+                                <th> Post Title </th>
+                                <th> Preferred Date-Time </th>
+                                <th> Message </th>
+                                <th> Status </th>
+                                <th> Actions </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> 
+                                    MD. ARAFAT RAHMAN SAMIR 
+                                </td>
+                                <td> 2 Master Bedrooms </td>
+                                <td> 10 Sep 10.30 </td>
+                                <td> Booking </td>
+                                <td> Pending </td>
+                                <td> 
+                                    <button> Reject </button>
+                                    <button> Approve </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br><br><br><hr>
+
+                <div id="myReports">
+                    <h3> My Reports </h3>
+                    <div style="background-color: #FFFFFF;">
+                        <p> Title : 2 Bedrooms </p>
+                        <p> Date : 12 Sep </p>
+                        <p> Reason : Fake </p>
+                        <p> Description </p>
+                        <p> Status : Pending </p>
+                        <p> Response : Removed Post </p>
+                    </div>
+                </div>
+
+                <br><br><br><hr>
+
+                <div id="mySupports">
+                    <h3> My Reports </h3>
+                    <button> Ask for Help </button>
+                    <div style="background-color: #FFFFFF;">
+                        <p> Subject : 2 Bedrooms </p>
+                        <p> Date : 12 Sep </p>
+                        <p> Description </p>
+                        <p> Status : Pending </p>
+                        <p> Response : Removed Post </p>
+                    </div>
+                </div>
+        </section>
+
+        <section id="postsTab">
+            <h3> My Posts </h3>
+            <button> + Create New Post </button>
+            <br>
+            <div id="postCard" style="background-color: #FFFFFF;">
+                <div>
+                    <span> Post Type </span>
+                    <img src="" alt="Error">
+                </div>
+            
+                <p>Title</p>
+                <p>Price</p>
+                <p>Location</p>
+
+                <hr>
+
+                <p>
+                    User Name <span> Is verfied </span>
+                </p>
+                <p> UserType </p>
+                <p> Posted Date </p>
+                <div>
+                    <button> Edit </button>
+                    <button> Delete </button>
+                    <button> Details </button>
+                </div>
             </div>
         </section>
 
-        <section id="myPostsDiv">
-            <div>
-                <h3> My Posts </h3>
-                <br>
-            </div>
+        <section id="savedTab">
+            <h3> Saved Posts </h3>
+            <br>
 
-            <div>
+            <div id="postCard" style="background-color: #FFFFFF;">
+                <div>
+                    <span> Post Type </span>
+                    <button> Report </button>
+                    <img src="" alt="Error">
+                </div>
+            
+                <p>Title</p>
+                <p>Price</p>
+                <p>Location</p>
 
+                <hr>
+
+                <p>
+                    User Name <span> Is verfied </span>
+                </p>
+                <p> UserType </p>
+                <p> Posted Date </p>
+                <div>
+                    <button> Remove </button>
+                    <button> Details </button>
+                </div>
             </div>
         </section>
 
-            <section id="savedPostsDiv">
-            <div>
-                <h3> Saved Posts </h3>
-                <br>
-            </div>
-
-            <div>
-
-            </div>
-        </section>
-
-        <section id="settingsDiv">
+        <section id="settingsTab">
             <div>
                 <h3> Account Settings </h3>
                 <br>
-                <button> Edit Profile Details > </button>
+                <button class="editProfileDetailsBtn"> Edit Profile Details > </button>
                 <hr>
-                <button> Change Password </button>
+                <button id="changePasswordBtn"> Change Password </button>
                 <hr>
-                <button> Logout </button>
+                <button id="LogoutBtn"> Logout </button>
                 <hr>
                 <button id="deleteAccountBtn"> Delete Rental Point Account </button>
             </div>
-
-            <div>
-
-            </div>
         </section>
-    </main>
     
-    <!-- Delete account Popup -->
-    <div id="popupBg"></div>
-    <div id="deleteAccountPopup">
-        <button> X </button>        
-        <br>
-        <span> Do You Want to Delete Rental Point Account Permanently? </span>
-        <br><br><br>
-        <button id="cancelDeleteBtn"> Cancel </button>
-        <button style="background:rgba(217, 63, 63, 1);"> Yes, Delete Permanently </button>
-    </div>
+        <div id="popupBg"></div>
 
+        <!-- Change Password Popup -->
+        <div id="changePasswordPopup">
+            <h3> Change Password </h3>
+            <button> X </button>        
+            <br>
+            <form action="../../Controller/changePasswordController.php">
+                <label for="currentPassword"> Current Password </label>
+                <input type="password" name="currentPassword">
+                <hr>
+                <label for="NewPassword"> Enter New Password </label>
+                <input type="password" name="NewPassword">
+                <hr>
+                <label for="againNewPassword"> Enter New Password Again </label>
+                <input type="password" name="againNewPassword">
+                <hr>
+                <input type="button" id="cancelChangePasswordBtn"  value="Cancel">
+                <input type="submit" name="saveNewPassword" value="Save New Password" style="background:rgba(111, 185, 135, 1);">
+            </form>
+        </div>
+
+        <!-- Logout Popup -->
+        <div id="logoutPopup">
+            <button> X </button>        
+            <br>
+            <span> Do You Want to Logout? </span>
+            <br><br><br>
+            <button id="cancelLogoutBtn"> No </button>
+            <button id="confirmLogoutBtn" style="background:rgba(217, 63, 63, 1);"> Yes </button>
+        </div>
+
+         <!-- Delete account Popup -->
+        <div id="deleteAccountPopup">
+            <button> X </button>        
+            <br>
+            <span> Do You Want to Delete Rental Point Account Permanently? </span>
+            <br><br><br>
+            <button id="cancelDeleteBtn"> Cancel </button>
+            <button style="background:rgba(217, 63, 63, 1);"> Yes, Delete Permanently </button>
+        </div>
+    </main>
 
     <footer></footer>
 </body>
