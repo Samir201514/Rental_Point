@@ -95,22 +95,22 @@
                 <h3> Post Views </h3>
                 <br>
                 <div id="viewCounts">
-                    <div> 
+                    <div class="counts"> 
                         <span> Total Views </span>
                         <br><br>
-                        <span class="counts"> 1235 </span>
+                        <span class="numbers"> 1235 </span>
                     </div>
 
-                    <div> 
+                    <div class="counts"> 
                         <span> Total Saves </span>
                         <br><br>
-                        <span class="counts"> 1235 </span>
+                        <span class="numbers"> 1235 </span>
                     </div>
 
-                    <div> 
+                    <div class="counts"> 
                         <span> Total Contacts </span>
                         <br><br>
-                        <span class="counts"> 1235 </span>
+                        <span class="numbers"> 1235 </span>
                     </div>
                 </div>
     
@@ -175,29 +175,86 @@
 
                 <div id="myReports">
                     <h3> My Reports </h3>
-                    
+                    <div style="background-color: #FFFFFF;">
+                        <p> Title : 2 Bedrooms </p>
+                        <p> Date : 12 Sep </p>
+                        <p> Reason : Fake </p>
+                        <p> Description </p>
+                        <p> Status : Pending </p>
+                        <p> Response : Removed Post </p>
+                    </div>
+                </div>
+
+                <br><br><br><hr>
+
+                <div id="mySupports">
+                    <h3> My Reports </h3>
+                    <button> Ask for Help </button>
+                    <div style="background-color: #FFFFFF;">
+                        <p> Subject : 2 Bedrooms </p>
+                        <p> Date : 12 Sep </p>
+                        <p> Description </p>
+                        <p> Status : Pending </p>
+                        <p> Response : Removed Post </p>
+                    </div>
                 </div>
         </section>
 
         <section id="postsTab">
-            <div>
-                <h3> My Posts </h3>
-                <br>
-            </div>
+            <h3> My Posts </h3>
+            <button> + Create New Post </button>
+            <br>
+            <div id="postCard" style="background-color: #FFFFFF;">
+                <div>
+                    <span> Post Type </span>
+                    <img src="" alt="Error">
+                </div>
+            
+                <p>Title</p>
+                <p>Price</p>
+                <p>Location</p>
 
-            <div>
+                <hr>
 
+                <p>
+                    User Name <span> Is verfied </span>
+                </p>
+                <p> UserType </p>
+                <p> Posted Date </p>
+                <div>
+                    <button> Edit </button>
+                    <button> Delete </button>
+                    <button> Details </button>
+                </div>
             </div>
         </section>
 
         <section id="savedTab">
-            <div>
-                <h3> Saved Posts </h3>
-                <br>
-            </div>
+            <h3> Saved Posts </h3>
+            <br>
 
-            <div>
+            <div id="postCard" style="background-color: #FFFFFF;">
+                <div>
+                    <span> Post Type </span>
+                    <button> Report </button>
+                    <img src="" alt="Error">
+                </div>
+            
+                <p>Title</p>
+                <p>Price</p>
+                <p>Location</p>
 
+                <hr>
+
+                <p>
+                    User Name <span> Is verfied </span>
+                </p>
+                <p> UserType </p>
+                <p> Posted Date </p>
+                <div>
+                    <button> Remove </button>
+                    <button> Details </button>
+                </div>
             </div>
         </section>
 
@@ -212,10 +269,6 @@
                 <button id="LogoutBtn"> Logout </button>
                 <hr>
                 <button id="deleteAccountBtn"> Delete Rental Point Account </button>
-            </div>
-
-            <div>
-
             </div>
         </section>
     
