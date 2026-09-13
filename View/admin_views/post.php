@@ -1,27 +1,25 @@
 <?php
-session_start();
-if (!isset($_SESSION["adminId"])) {
-    header("Location: ../login.php");
-    exit;
-}
+// session_start();
+// if (!isset($_SESSION["adminId"])) {
+//     header("Location: ../login.php");
+//     exit;
+// }
 
-require_once "../../models/adminModel.php";
-$active = "posts";
-$posts  = getAllPosts();
+// require_once "../../models/adminModel.php";
+// $active = "posts";
+// $posts  = getAllPosts();
 ?>
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Rental Point - Admin Posts</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../View/admin_views/css/style.css">
 </head>
 <body>
 
 <div class="layout">
-
-  <?php include "sidebar.php"; ?>
-
+<?php include "../View/admin_views/sidebar.php";?>
   <main class="main">
     <div class="main-header">
       <div>
@@ -41,7 +39,6 @@ $posts  = getAllPosts();
       <table id="postsTable">
         <thead>
           <tr>
-            <th>Post ID</th>
             <th>Title</th>
             <th>Post Type</th>
             <th>Posted By</th>
@@ -55,14 +52,13 @@ $posts  = getAllPosts();
         <tbody>
           <?php foreach ($posts as $p): ?>
           <tr>
-            <td><?= htmlspecialchars($p["post_code"]) ?></td>
-            <td><?= htmlspecialchars($p["title"]) ?></td>
-            <td><span class="tag"><?= htmlspecialchars($p["type"]) ?></span></td>
-            <td><?= htmlspecialchars($p["posted_by"]) ?></td>
-            <td><?= htmlspecialchars($p["location"]) ?></td>
-            <td>&#2547;<?= number_format($p["price"]) ?>/mo</td>
-            <td><span class="badge badge-<?= strtolower($p["status"]) ?>"><?= htmlspecialchars($p["status"]) ?></span></td>
-            <td><?= htmlspecialchars(date("M d, Y", strtotime($p["created_date"]))) ?></td>
+            <td><?= htmlspecialchars($p["Title"]) ?></td>
+            <td><span class="tag"><?= htmlspecialchars($p["PostType"]) ?></span></td>
+            <td><?= htmlspecialchars($p["PosterName"]) ?></td>
+            <td><?= htmlspecialchars($p["Location"]) ?></td>
+            <td>&#2547;<?= number_format($p["MonthlyRent"]) ?>/mo</td>
+            <td><span class="badge badge-<?= strtolower($p["Status"]) ?>"><?= htmlspecialchars($p["Status"]) ?></span></td>
+            <td><?= htmlspecialchars(date("M d, Y", strtotime($p["CreatedAt"]))) ?></td>
             <td>
               <a href="#" class="link-view">View</a>
               <a href="#"
@@ -100,7 +96,7 @@ $posts  = getAllPosts();
   </div>
 </div>
 
-<script src="js/script.js"></script>
+<script src="../View/admin_views/js/script.js"></script>
 <script>
   attachTableSearch('postSearch', 'postsTable');
   attachRemovePostModal();

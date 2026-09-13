@@ -1,33 +1,33 @@
 <?php
-session_start();
-if (!isset($_SESSION["adminId"])) {
-    header("Location: ../login.php");
-    exit;
-}
+// session_start();
+// if (!isset($_SESSION["adminId"])) {
+//     header("Location: ../login.php");
+//     exit;
+// }
 
-require_once "../../models/adminModel.php";
-$active = "verification";
-$rows   = getAllVerifications();
+// require_once "../../models/adminModel.php";
+// $active = "verification";
+// $rows   = getAllVerifications();
 
-function initials($name)
-{
-    $parts   = preg_split('/\s+/', trim($name));
-    $letters = array_map(fn($p) => substr($p, 0, 1), array_slice($parts, 0, 2));
-    return strtoupper(implode('', $letters));
-}
+// function initials($name)
+// {
+//     $parts   = preg_split('/\s+/', trim($name));
+//     $letters = array_map(fn($p) => substr($p, 0, 1), array_slice($parts, 0, 2));
+//     return strtoupper(implode('', $letters));
+// }
 ?>
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Rental Point - Admin Verification</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../View/admin_views/css/style.css">
 </head>
 <body>
 
 <div class="layout">
 
-  <?php include "sidebar.php"; ?>
+  <?php include "../View/admin_views/sidebar.php";?>
 
   <main class="main">
     <div class="main-header">
@@ -57,20 +57,20 @@ function initials($name)
           <tr>
             <td>
               <div class="user-cell">
-                <div class="avatar"><?= htmlspecialchars(initials($r["owner_name"])) ?></div>
-                <?= htmlspecialchars($r["owner_name"]) ?>
+                <div class="avatar"></div>
+                <?= htmlspecialchars($r["OwnerName"]) ?>
               </div>
             </td>
-            <td><span class="badge badge-<?= strtolower($r["status"]) ?>"><?= htmlspecialchars($r["status"]) ?></span></td>
+            <td><span class="badge badge-<?= strtolower($r["Status"]) ?>"><?= htmlspecialchars($r["Status"]) ?></span></td>
             <td>
-              <?php if ($r["status"] === "Pending"): ?>
+              <?php if ($r["Status"] === "Pending"): ?>
                 <form method="post" action="../../controllers/verificationControls.php" class="inline-form">
-                  <input type="hidden" name="id" value="<?= (int) $r["id"] ?>">
+                  <input type="hidden" name="id" value="<?= (int) $r["UserId"] ?>">
                   <input type="hidden" name="status" value="Approved">
                   <button type="submit" class="btn btn-approve">Approve</button>
                 </form>
                 <form method="post" action="../../controllers/verificationControls.php" class="inline-form">
-                  <input type="hidden" name="id" value="<?= (int) $r["id"] ?>">
+                  <input type="hidden" name="id" value="<?= (int) $r["UserId"] ?>">
                   <input type="hidden" name="status" value="Rejected">
                   <button type="submit" class="btn btn-reject">Reject</button>
                 </form>
@@ -91,6 +91,6 @@ function initials($name)
 
 </div>
 
-<script src="js/script.js"></script>
+<script src="../View/admin_views/js/script.js"></script>
 </body>
 </html>

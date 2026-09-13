@@ -1,27 +1,25 @@
 <?php
-session_start();
-if (!isset($_SESSION["adminId"])) {
-    header("Location: ../login.php");
-    exit;
-}
+// session_start();
+// if (!isset($_SESSION["adminId"])) {
+//     header("Location: ../login.php");
+//     exit;
+// }
 
-require_once "../../models/adminModel.php";
-$active = "reports";
-$rows   = getAllReports();
+// require_once "../../models/adminModel.php";
+// $active = "reports";
+// $rows   = getAllReports();
 ?>
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Rental Point - Admin Reports</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../View/admin_views/css/style.css">
 </head>
 <body>
 
 <div class="layout">
-
-  <?php include "sidebar.php"; ?>
-
+<?php include "../View/admin_views/sidebar.php";?>
   <main class="main">
     <div class="main-header">
       <div>
@@ -48,17 +46,17 @@ $rows   = getAllReports();
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($rows as $r): ?>
+          <?php foreach ($reports as $r): ?>
           <tr>
-            <td><?= htmlspecialchars($r["reported_item"]) ?></td>
-            <td><?= htmlspecialchars($r["reason"]) ?></td>
-            <td><?= htmlspecialchars($r["reporter"]) ?></td>
-            <td><span class="badge badge-<?= strtolower($r["status"]) ?>"><?= htmlspecialchars($r["status"]) ?></span></td>
+            <td><?= htmlspecialchars($r["PostTitle"]) ?></td>
+            <td><?= htmlspecialchars($r["ReportType"]) ?></td>
+            <td><?= htmlspecialchars($r["ReporterName"]) ?></td>
+            <td><span class="badge badge-<?= strtolower($r["Status"]) ?>"><?= htmlspecialchars($r["Status"]) ?></span></td>
             <td>
-              <?php if ($r["status"] === "Open" && $r["related_post_id"]): ?>
+              <?php if ($r["Status"] === "Open" && $r["PostId"]): ?>
                 <form method="post" action="../../controllers/postControls.php" class="inline-form">
                   <input type="hidden" name="action" value="remove">
-                  <input type="hidden" name="id" value="<?= (int) $r["related_post_id"] ?>">
+                  <input type="hidden" name="id" value="<?= (int) $r["PostId"] ?>">
                   <button type="submit" class="btn btn-danger">Remove Post</button>
                 </form>
                 <form method="post" action="../../controllers/reportControls.php" class="inline-form">
@@ -66,7 +64,7 @@ $rows   = getAllReports();
                   <input type="hidden" name="status" value="Resolved">
                   <button type="submit" class="btn btn-cancel">Dismiss</button>
                 </form>
-              <?php elseif ($r["status"] === "Open"): ?>
+              <?php elseif ($r["Status"] === "Open"): ?>
                 <form method="post" action="../../controllers/reportControls.php" class="inline-form">
                   <input type="hidden" name="id" value="<?= (int) $r["id"] ?>">
                   <input type="hidden" name="status" value="Resolved">
@@ -84,7 +82,7 @@ $rows   = getAllReports();
           </tr>
           <?php endforeach; ?>
 
-          <?php if (empty($rows)): ?>
+          <?php if (empty($reports)): ?>
           <tr><td colspan="5" class="muted">No reports found.</td></tr>
           <?php endif; ?>
         </tbody>
@@ -94,6 +92,6 @@ $rows   = getAllReports();
 
 </div>
 
-<script src="js/script.js"></script>
+<script src="../View/admin_views/js/script.js"></script>
 </body>
 </html>
