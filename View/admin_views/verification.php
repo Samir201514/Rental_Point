@@ -1,0 +1,96 @@
+<?php
+session_start();
+if (!isset($_SESSION["adminId"])) {
+    header("Location: ../login.php");
+    exit;
+}
+
+require_once "../../models/adminModel.php";
+$active = "verification";
+$rows   = getAllVerifications();
+
+function initials($name)
+{
+    $parts   = preg_split('/\s+/', trim($name));
+    $letters = array_map(fn($p) => substr($p, 0, 1), array_slice($parts, 0, 2));
+    return strtoupper(implode('', $letters));
+}
+?>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rental Point - Admin Verification</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <?php include "sidebar.php"; ?>
+
+  <main class="main">
+    <div class="main-header">
+      <div>
+        <h1>Verification Requests</h1>
+        <p>Verify NID, utility bills, and property tax ownership files.</p>
+      </div>
+    </div>
+
+    <?php if (isset($_GET["msg"])): ?>
+      <div class="flash flash-success"><?= htmlspecialchars($_GET["msg"]) ?></div>
+    <?php elseif (isset($_GET["err"])): ?>
+      <div class="flash flash-error"><?= htmlspecialchars($_GET["err"]) ?></div>
+    <?php endif; ?>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Owner Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($rows as $r): ?>
+          <tr>
+            <td>
+              <div class="user-cell">
+                <div class="avatar"><?= htmlspecialchars(initials($r["owner_name"])) ?></div>
+                <?= htmlspecialchars($r["owner_name"]) ?>
+              </div>
+            </td>
+            <td><span class="badge badge-<?= strtolower($r["status"]) ?>"><?= htmlspecialchars($r["status"]) ?></span></td>
+            <td>
+              <?php if ($r["status"] === "Pending"): ?>
+                <form method="post" action="../../controllers/verificationControls.php" class="inline-form">
+                  <input type="hidden" name="id" value="<?= (int) $r["id"] ?>">
+                  <input type="hidden" name="status" value="Approved">
+                  <button type="submit" class="btn btn-approve">Approve</button>
+                </form>
+                <form method="post" action="../../controllers/verificationControls.php" class="inline-form">
+                  <input type="hidden" name="id" value="<?= (int) $r["id"] ?>">
+                  <input type="hidden" name="status" value="Rejected">
+                  <button type="submit" class="btn btn-reject">Reject</button>
+                </form>
+              <?php else: ?>
+                &mdash;
+              <?php endif; ?>
+            </td>
+          </tr>
+          <?php endforeach; ?>
+
+          <?php if (empty($rows)): ?>
+          <tr><td colspan="3" class="muted">No verification requests found.</td></tr>
+          <?php endif; ?>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
