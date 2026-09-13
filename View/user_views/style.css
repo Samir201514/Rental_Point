@@ -215,16 +215,6 @@ header {
     color: #666;
     font-size: 0.85rem;
 }
-.support-card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 25px;
-}
-
-.support-card h2 {
-    margin-bottom: 15px;
-}
 
 .form-group {
     margin-bottom: 15px;
