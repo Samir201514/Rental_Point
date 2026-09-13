@@ -1,18 +1,9 @@
 body{
-    background-color: E9E7E2;
-}
-#photo{
-    margin: 25px;
-    padding: 25px;
-    border: 2px solid rgba(111, 185, 135, 1);
-    border-radius: 20px;
-    background-color: FAF8F5;
+    background-color: #FAF8F5;
 }
 
-#proPic{
-    display: flex;
-    flex-direction: row;
-    gap: 900px;
+#userIntroTab{
+    text-align: center;
 }
 
 #btnSection{
@@ -31,7 +22,11 @@ hr{
     border: 1px solid rgba(111, 185, 135, 1);
 }
 
-#aboutDiv{
+#activityTab, #postsTab, #savedTab, #settingsTab, #popupBg, #changePasswordPopup, #logoutPopup, #deleteAccountPopup{
+    display: none;
+}
+
+#userIntroTab, #propertyVerifyTab, #aboutTab, #activityTab, #postsTab,  #savedTab, #settingsTab, #userPrefTab, #updateInfoBtn{
     margin: 25px;
     padding: 25px;
     border: 2px solid rgba(111, 185, 135, 1);
@@ -39,12 +34,30 @@ hr{
     background-color: rgb(227, 238, 227);
 }
 
-#settingsDiv{
-    margin: 25px;
-    padding: 25px;
+.data{
+    text-align: right;
+}
+
+
+#viewCounts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.counts{
+    text-align: center;
+    width: 500px;
+    padding: 15px;
+    margin: 10px;
     border: 2px solid rgba(111, 185, 135, 1);
-    border-radius: 20px;
-    background-color: rgb(227, 238, 227);
+    border-radius: 10%;
+    background-color:#FFFFFF;
+}
+
+.numbers{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 36px;
 }
 
 #popupBg{
@@ -59,6 +72,30 @@ hr{
     z-index: 1;
 
     opacity: 0.6;
+}
+
+#changePasswordPopup{
+    width: 250px;
+    padding: 15px;
+    border: 2px solid rgba(111, 185, 135, 1);
+    background-color: #FAF8F5;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+}
+
+#logoutPopup{
+    width: 250px;
+    padding: 15px;
+    border: 2px solid red;
+    background-color: rgba(254, 236, 236, 1);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
 }
 
 #deleteAccountPopup{
