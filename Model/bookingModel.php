@@ -1,5 +1,5 @@
 <?php
-    function createBooking($conn, $postId, $userId, $dateTime, $note) 
+    function createBooking($conn, $postId, $userId, $dateTime, $note)
     {
         $sql = "INSERT INTO booking (PostId, UserId, PreferredDateTime, Note) VALUES (?, ?, ?, ?);";
 
@@ -74,7 +74,7 @@
         return $result;
     }
 
-    function updateBookingStatus($conn, $bookingId, $status) 
+    function updateBookingStatus($conn, $bookingId, $status)
     {
         $stmt = mysqli_prepare($conn,
             "UPDATE booking
