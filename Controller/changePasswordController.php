@@ -14,40 +14,16 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 }
 
 $userId = $_SESSION["UserId"];
-
-if (isset($_POST["currentPassword"])) {
-    $currentPassword = $_POST["currentPassword"];
-} else {
-    $currentPassword = "";
-}
-
-if (isset($_POST["NewPassword"])) {
-    $newPassword = $_POST["NewPassword"];
-} else {
-    $newPassword = "";
-}
-
-if (isset($_POST["againNewPassword"])) {
-    $confirmPassword = $_POST["againNewPassword"];
-} else {
-    $confirmPassword = "";
-}
+if (isset($_POST["currentPassword"])) { $current = $_POST["currentPassword"]; } else { $current = ""; }
+if (isset($_POST["NewPassword"])) { $newPass = $_POST["NewPassword"]; } else { $newPass = ""; }
+if (isset($_POST["againNewPassword"])) { $confirm = $_POST["againNewPassword"]; } else { $confirm = ""; }
 
 $errors = array();
-
 $currentHash = getPassword($conn, $userId);
 
-if (!password_verify($currentPassword, $currentHash)) {
-    $errors["currentPassword"] = "Current password is incorrect";
-}
-
-if (empty($newPassword) || strlen($newPassword) < 6) {
-    $errors["NewPassword"] = "New password must be at least 6 characters";
-}
-
-if ($newPassword !== $confirmPassword) {
-    $errors["againNewPassword"] = "Passwords do not match";
-}
+if (!password_verify($current, $currentHash)) { $errors["currentPassword"] = "Current password is incorrect"; }
+if (strlen($newPass) < 6) { $errors["NewPassword"] = "New password must be at least 6 characters"; }
+if ($newPass !== $confirm) { $errors["againNewPassword"] = "Passwords do not match"; }
 
 if (!empty($errors)) {
     $_SESSION["errors"] = $errors;
@@ -55,9 +31,7 @@ if (!empty($errors)) {
     exit();
 }
 
-$newHash = password_hash($newPassword, PASSWORD_DEFAULT);
-changePassword($conn, $userId, $newHash);
-
+changePassword($conn, $userId, password_hash($newPass, PASSWORD_DEFAULT));
 header("Location: ../Controller/userProfileController.php");
 exit();
 ?>

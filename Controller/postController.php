@@ -1,15 +1,20 @@
 <?php
-require_once __DIR__. '/../Model/dbConnect.php';
-require_once __DIR__ . '/../Model/postModel.php';
+session_start();
+require_once "../Model/dbConnect.php";
+require_once "../Model/postModel.php";
+require_once "../Model/adminModel.php";
 
-// Function to fetch posts for view pages
-function fetchHomePagePosts($conn) {
-    return getAllPosts($conn);
+if (!isset($_SESSION["UserId"]) || $_SESSION["UserTypeId"] != 1) {
+    header("Location: ../View/login.php");
+    exit();
 }
 
-// Only execute the admin view loading if this file is called directly
-if (basename($_SERVER['PHP_SELF']) === 'postController.php') {
-    $posts = getAllPosts($conn);
-    require_once __DIR__ . '/../View/admin_views/post.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])) {
+    removePost($conn, (int)$_POST["id"]);
+    header("Location: ../Controller/postController.php");
+    exit();
 }
+
+$posts = getAllPosts($conn);
+require_once "../View/admin_views/post.php";
 ?>

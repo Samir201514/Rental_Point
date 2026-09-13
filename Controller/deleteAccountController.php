@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "../Model/dbConnect.php";
-require_once "../Model/accountModel.php";
+require_once "../Model/userModel.php";
 
 if (!isset($_SESSION["UserId"])) {
     header("Location: ../View/login.php");

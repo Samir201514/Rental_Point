@@ -1,21 +1,24 @@
 <?php
+session_start();
 require_once "../Model/dbConnect.php";
 require_once "../Model/adminModel.php";
 
-// session_start();
-// if (!isset($_SESSION["adminId"])) {
-//     header("Location: ../views/login.php");
-//     exit;
-// }
+if (!isset($_SESSION["UserId"]) || $_SESSION["UserTypeId"] != 1) {
+    header("Location: ../View/login.php");
+    exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])) {
+    $id = (int)$_POST["id"];
+    if (isset($_POST["remove_post"])) {
+        removePost($conn, $id);
+    } elseif (isset($_POST["response"])) {
+        respondReport($conn, $id, $_POST["response"], "Resolved");
+    }
+    header("Location: ../Controller/reportController.php");
+    exit();
+}
+
 $reports = getAllReports($conn);
-
 require "../View/admin_views/report.php";
-// if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["id"]) && ($_POST["status"] ?? "") == "Resolved") {
-//     $id = (int) $_POST["id"];
-//     updateReport($id, "Resolved");
-//     header("Location: ../views/admin/reports.php?msg=Report resolved");
-// } else {
-//     header("Location: ../views/admin/reports.php?err=Invalid request");
-// }
-
 ?>

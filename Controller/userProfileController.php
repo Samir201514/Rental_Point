@@ -1,8 +1,12 @@
 <?php
 session_start();
-
 require_once "../Model/dbConnect.php";
-require_once "../Model/userProfileModel.php";
+require_once "../Model/userModel.php";
+require_once "../Model/postModel.php";
+require_once "../Model/ownerPostModel.php";
+require_once "../Model/bookingModel.php";
+require_once "../Model/reportModel.php";
+require_once "../Model/supportModel.php";
 
 if (!isset($_SESSION["UserId"])) {
     header("Location: ../View/login.php");
@@ -10,8 +14,7 @@ if (!isset($_SESSION["UserId"])) {
 }
 
 $userId = $_SESSION["UserId"];
-
-$user = getUserById($conn, $userId);
+$user = getUser($conn, $userId);
 
 if (!$user) {
     session_destroy();
@@ -24,18 +27,21 @@ if ($user["UserTypeId"] == 3) {
     $userPref = getUserPreference($conn, $userId);
 }
 
-$postStats = array();
-$perPostAnalytics = null;
+$ownerStats = array();
+$perPostStats = null;
+$myVerification = null;
 if ($user["UserTypeId"] == 2) {
-    $postStats = getUserPostStats($conn, $userId);
-    $perPostAnalytics = getPerPostAnalytics($conn, $userId);
+    $ownerStats = getOwnerStats($conn, $userId);
+    $perPostStats = getPerPostStats($conn, $userId);
+    $myVerification = getMyVerification($conn, $userId);
 }
 
-$bookingsReceived = getBookingsReceived($conn, $userId);
+$myBookingsSent = getMyBookingSent($conn, $userId);
+$myBookingsReceived = getMyBookingReceived($conn, $userId);
 $myReports = getMyReports($conn, $userId);
-$mySupportTickets = getMySupportTickets($conn, $userId);
+$mySupport = getMySupport($conn, $userId);
 $myPosts = getMyPosts($conn, $userId);
-$savedPosts = getSavedPostsForUser($conn, $userId);
+$savedPosts = getSavedPosts($conn, $userId);
 
 require_once "../View/user_views/userProfile.php";
 ?>
