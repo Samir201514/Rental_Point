@@ -8,7 +8,8 @@ require_once "../Model/adminModel.php";
 //     exit;
 // }
 $reports = getAllReports($conn);
-require "../View/admin_views/reports.php";
+
+require "../View/admin_views/report.php";
 // if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["id"]) && ($_POST["status"] ?? "") == "Resolved") {
 //     $id = (int) $_POST["id"];
 //     updateReport($id, "Resolved");

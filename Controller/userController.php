@@ -10,7 +10,7 @@
 
     $users = getAllUsers($conn);
 
-    require "../View/admin_views/users.php";
+    require "../View/admin_views/user.php";
 
     // if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["id"])) 
     // {

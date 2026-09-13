@@ -8,7 +8,8 @@ require_once "../Model/adminModel.php";
 //     exit;
 // }
 $posts = getAllPosts($conn);
-require "../View/admin_views/posts.php";
+
+require "../View/admin_views/post.php";
 // if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["id"]) && ($_POST["action"] ?? "") == "remove") {
 //     $id = (int) $_POST["id"];
 //     removePost($id);

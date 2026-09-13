@@ -8,6 +8,7 @@ require_once "../Model/adminModel.php";
 //     exit;
 // }
 $helps = getAllSupport($conn);
+
 require "../View/admin_views/help.php";
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["id"])) {

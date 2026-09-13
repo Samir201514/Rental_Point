@@ -20,14 +20,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Rental Point - Admin Users</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../View/admin_views/css/style.css">
 </head>
 <body>
 
 <div class="layout">
 
-  <?php include "sidebar.php"; ?>
-
+<?php include "../View/admin_views/sidebar.php";?>
   <main class="main">
     <div class="main-header">
       <div>
@@ -80,10 +79,10 @@
 
 </div>
 
-<!-- <script src="js/script.js"></script>
+<script src="../View/admin_views/js/script.js"></script>
 <script>
   attachTableSearch('userSearch', 'usersTable');
   attachConfirmForms();
-</script> -->
+</script>
 </body>
 </html>
