@@ -19,7 +19,7 @@
       <nav class="nav-links">
         <a href="#">About</a>
         <div class="nav-auth">
-          <a href="create-account.php" class="register">Register</a>
+          <a href="user_views/createAccount.php" class="register">Register</a>
           <a href="login.php" class="btn btn-primary">Login</a>
         </div>
       </nav>
@@ -32,7 +32,7 @@
     
     <div class="hero-actions">
       <a href="login.php" class="btn btn-primary">Login to Account</a>
-      <a href="create-account.php" class="btn btn-outline">Register</a>
+      <a href="user_views/createAccount.php" class="btn btn-outline">Register</a>
     </div>
   </section>
 

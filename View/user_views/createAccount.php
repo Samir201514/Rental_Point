@@ -1,27 +1,22 @@
 <?php
-$fullName = '';
-$email = '';
-$phone = '';
-$gender = '';
-$accountType = '';
-$location = '';
-$lookingFor = '';
-$minBudget = '';
-$maxBudget = '';
-$prefLocation = '';
-$moveInDate = '';
-$occupation = '';
-$errors = [];
-$successMessage = '';
+session_start();
 
-if (isset($_GET["success"])) {
-    $successMessage = "Account created successfully!";
-}
+$errors = $_SESSION["errors"] ?? [];
+$old = $_SESSION["old"] ?? [];
+unset($_SESSION["errors"], $_SESSION["old"]); 
 
-if (isset($_GET["error"])) {
-    $errors["general"] = $_GET["error"];
-}
-
+$fullName = $old["full_name"] ?? '';
+$email = $old["email"] ?? '';
+$phone = $old["phone"] ?? '';
+$gender = $old["gender"] ?? '';
+$accountType = $old["account_type"] ?? '';
+$location = $old["location"] ?? '';
+$lookingFor = $old["looking_for"] ?? '';
+$minBudget = $old["min_budget"] ?? '';
+$maxBudget = $old["max_budget"] ?? '';
+$prefLocation = $old["pref_location"] ?? '';
+$moveInDate = $old["move_in_date"] ?? '';
+$occupation = $old["occupation"] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,11 +25,11 @@ if (isset($_GET["error"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account | Rental Point</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="auth-page">
-    <a href="index.php" class="back-link"> Back </a>
+    <a href="../index.php" class="back-link"> Back </a>
 
     <div class="auth-container" style="padding: 4rem 2rem;">
         <div class="auth-card register-card">
@@ -305,7 +300,7 @@ if (isset($_GET["error"])) {
 
             <div class="auth-footer">
                 Already have an account?
-                <a href="login.php"> Login </a>
+                <a href="../login.php"> Login </a>
             </div>
         </div>
     </div>
