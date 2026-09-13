@@ -103,8 +103,8 @@
 
     <?php
     // Dynamic message handling via URL parameters or default fallback
-    $message = isset($_GET['msg']) ? $_GET['msg'] : "Post saved successfully.";
-    $redirect_url = isset($_GET['redirect']) ? $_GET['redirect'] : "home.php";
+    $message = isset($_GET['msg']) ? $_GET['msg'] . " sucesfully  ": "successfully done.";
+    $redirect_url = isset($_GET['redirect']) ? $_GET['redirect'] : "homepage.php";
     ?>
 
     <!-- Success Modal Card Popup -->

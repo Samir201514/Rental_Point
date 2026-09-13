@@ -55,24 +55,12 @@ $listings = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rental Point - Find Your Next Home</title>
-    
+    <link rel="stylesheet" href="./css/guestpage.css">
     <!-- Tailwind CSS for clean layout -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <style>
-        body {
-            background-color: #fcfbf7;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: #1a1a1a;
-        }
-        .bg-custom-green { background-color: #70c497; }
-        .bg-custom-green:hover { background-color: #5fb185; }
-        .bg-soft-green { background-color: #eaf6ef; }
-        .text-custom-green { color: #2d8a56; }
-        .border-custom-green { border-color: #70c497; }
-    </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
