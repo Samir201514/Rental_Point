@@ -1,4 +1,5 @@
 <?php
+
     function loginUser($conn, $email, $password)
     {
         $sql = "SELECT UserId, Name, Password, UserTypeId FROM User WHERE Email = ?";
