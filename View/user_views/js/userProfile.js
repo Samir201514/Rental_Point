@@ -102,6 +102,12 @@ cancelLogoutBtn.addEventListener("click", ()=>{
     popupBg.style.display = "none";
 })
 
+const confirmLogoutBtn = document.getElementById("confirmLogoutBtn")
+confirmLogoutBtn.addEventListener("click", ()=>{
+    window.location.href = "../logout.php";
+})
+
+
 
 // Delete account popup
 const deleteAccountPopup = document.getElementById("deleteAccountPopup");
