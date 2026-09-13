@@ -49,17 +49,23 @@
         return $post;
     }
 
-    function increaseViews($conn, $postId)
+    function getMyPost($conn, $postId)
     {
         $stmt = mysqli_prepare($conn,
-            "UPDATE post
-            SET ViewsCount = ViewsCount + 1
+            "SELECT UserId
+            FROM post
             WHERE PostId = ?"
         );
 
         mysqli_stmt_bind_param($stmt, "i", $postId);
 
         mysqli_stmt_execute($stmt);
+
+        $result = mysqli_stmt_get_result($stmt);
+
+        $post = mysqli_fetch_assoc($result);
+
+        return $post;
     }
 
     function createPost($conn, $userId, $postTypeId, $title, $description, $bedrooms, $bathrooms, $monthlyRent, $serviceCharge, $tenantPreference, $genderPref, $availableFrom, $location)
@@ -187,43 +193,6 @@
 
         mysqli_stmt_bind_param($stmt, "ii", $postId, $userId);
 
-        mysqli_stmt_execute($stmt);
-    }
-
-    function getPostContact($conn, $postId)
-    {
-        $stmt = mysqli_prepare($conn,
-            "SELECT
-                u.Name,
-                u.Email,
-                u.Phone
-            FROM post p
-            JOIN User u
-                ON p.UserId = u.UserId
-            WHERE p.PostId = ?"
-        );
-
-        mysqli_stmt_bind_param($stmt, "i", $postId);
-
-        mysqli_stmt_execute($stmt);
-
-        $result = mysqli_stmt_get_result($stmt);
-
-        $contact = mysqli_fetch_assoc($result);
-
-        return $contact;
-    }
-
-    function increaseContacts($conn, $postId)
-    {
-        $stmt = mysqli_prepare($conn,
-            "UPDATE post
-            SET ContactsCount = ContactsCount + 1
-            WHERE PostId = ?"
-        );
-
-        mysqli_stmt_bind_param($stmt, "i", $postId);
-        
         mysqli_stmt_execute($stmt);
     }
 
