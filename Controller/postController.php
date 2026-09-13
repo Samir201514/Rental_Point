@@ -1,29 +1,15 @@
 <?php
-require_once "../Model/dbConnect.php";
-require_once "../Model/adminModel.php";
+require_once __DIR__. '/../Model/dbConnect.php';
+require_once __DIR__ . '/../Model/postModel.php';
 
-// session_start();
-// if (!isset($_SESSION["adminId"])) {
-//     header("Location: ../views/login.php");
-//     exit;
-// }
-$posts = getAllPosts($conn);
+// Function to fetch posts for view pages
+function fetchHomePagePosts($conn) {
+    return getAllPosts($conn);
+}
 
-require "../View/admin_views/post.php";
-// if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["id"]) && ($_POST["action"] ?? "") == "remove") {
-//     $id = (int) $_POST["id"];
-//     removePost($id);
-
-//     // Reports/posts pages both submit here, so send the admin back to
-//     // whichever page the form came from.
-//     $from = $_SERVER["HTTP_REFERER"] ?? "../views/admin/posts.php";
-//     if (strpos($from, "reports.php") !== false) {
-//         header("Location: ../views/admin/reports.php?msg=Post removed from database");
-//     } else {
-//         header("Location: ../views/admin/posts.php?msg=Post removed from database");
-//     }
-// } else {
-//     header("Location: ../views/admin/posts.php?err=Invalid request");
-// }
-
+// Only execute the admin view loading if this file is called directly
+if (basename($_SERVER['PHP_SELF']) === 'postController.php') {
+    $posts = getAllPosts($conn);
+    require_once __DIR__ . '/../View/admin_views/post.php';
+}
 ?>

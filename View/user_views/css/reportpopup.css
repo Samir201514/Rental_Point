@@ -1,0 +1,179 @@
+/* CSS Reset & Body Background */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #6C727F;
+            color: #333333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Modal Container Popup Box */
+        .modal-card {
+            background-color: #FFFFFF;
+            width: 100%;
+            max-width: 440px;
+            border-radius: 16px;
+            padding: 28px 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        /* Header Area */
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #F0F0F0;
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #111111;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #888888;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close-btn:hover {
+            color: #333333;
+            background-color: #F0F0F0;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            color: #555555;
+            margin-bottom: 8px;
+        }
+
+        /* Select Input Styling */
+        .select-box {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #333333;
+            background-color: #FFFFFF;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .select-box:focus {
+            border-color: #72C39B;
+        }
+
+        /* Custom Visual List Mock for Options Display */
+        .options-preview-box {
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            margin-top: 6px;
+            overflow: hidden;
+            background-color: #FFFFFF;
+        }
+
+        .option-item {
+            padding: 10px 14px;
+            font-size: 13px;
+            color: #333333;
+            border-bottom: 1px solid #F0F0F0;
+            cursor: pointer;
+        }
+
+        .option-item:last-child {
+            border-bottom: none;
+        }
+
+        .option-item:hover {
+            background-color: #F8F8F8;
+        }
+
+        /* Textarea Input Styling */
+        .textarea-box {
+            width: 100%;
+            height: 100px;
+            padding: 12px 14px;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 13px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333333;
+            resize: none;
+            outline: none;
+        }
+
+        .textarea-box:focus {
+            border-color: #72C39B;
+        }
+
+        .textarea-box::placeholder {
+            color: #999999;
+        }
+
+        /* Modal Footer Action Buttons */
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .btn {
+            padding: 9px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-cancel {
+            background-color: #FFFFFF;
+            color: #444444;
+            border: 1px solid #E0E0E0;
+        }
+
+        .btn-cancel:hover {
+            background-color: #F5F5F5;
+        }
+
+        .btn-submit {
+            background-color: #72C39B;
+            color: #FFFFFF;
+        }
+
+        .btn-submit:hover {
+            background-color: #5FB188;
+        }
