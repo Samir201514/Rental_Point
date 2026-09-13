@@ -1,4 +1,12 @@
+// ============================================================
+// assets/script.js
+// Small, framework-free JS helpers shared across the admin pages.
+// Each function is opt-in: a page only calls the ones it needs.
+// ============================================================
 
+// Live filters a table's rows as the user types in a search box.
+// searchInputId : id of the <input> box
+// tableId       : id of the <table> whose <tbody> rows get filtered
 function attachTableSearch(searchInputId, tableId) {
   const input = document.getElementById(searchInputId);
   const table = document.getElementById(tableId);
@@ -15,7 +23,8 @@ function attachTableSearch(searchInputId, tableId) {
   });
 }
 
-.
+// Adds a confirm() prompt before any form with class="confirm-form"
+// submits. The message shown comes from the form's data-confirm attribute.
 function attachConfirmForms() {
   document.querySelectorAll('form.confirm-form').forEach(form => {
     form.addEventListener('submit', (e) => {
@@ -27,7 +36,9 @@ function attachConfirmForms() {
   });
 }
 
-
+// Wires up the "Remove Post" modal used on posts.php.
+// Clicking a ".open-remove-modal" link fills in the modal's hidden
+// fields and shows it; Cancel or clicking outside the modal hides it.
 function attachRemovePostModal() {
   const modal   = document.getElementById('removeModal');
   const idField = document.getElementById('removeModalId');
@@ -55,6 +66,8 @@ function attachRemovePostModal() {
   });
 }
 
+// Toggles the hidden "reply" row under a help ticket when the
+// "Respond" button is clicked. Used on help.php.
 function attachReplyToggles() {
   document.querySelectorAll('.toggle-reply').forEach(btn => {
     btn.addEventListener('click', () => {
