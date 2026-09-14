@@ -65,18 +65,8 @@ $postsResult = getAllPosts($conn);
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="userProfile.php" class="sidebar-link">
+                        <a href="../../Controller/userProfileController.php" class="sidebar-link">
                             <span>&#128100;</span> Profile
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="my_posts.php" class="sidebar-link">
-                            <span>&#128196;</span> My Post
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="saved_posts.php" class="sidebar-link">
-                            <span>&#128101;</span> Saved Post
                         </a>
                     </li>
                     <li class="sidebar-item">
@@ -85,12 +75,12 @@ $postsResult = getAllPosts($conn);
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="help.php" class="sidebar-link">
+                        <a href="support.php" class="sidebar-link">
                             <span>&#10067;</span> Help
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="index.php" class="sidebar-link text-danger">
+                        <a href="../logout.php" class="sidebar-link text-danger">
                             <span>&#10140;</span> Logout
                         </a>
                     </li>
@@ -104,7 +94,7 @@ $postsResult = getAllPosts($conn);
                 <div class="create-post-card">
                     <img src="<?php echo htmlspecialchars($logged_in_user['avatar']); ?>" alt="User Avatar" class="avatar">
                     <input type="text" placeholder="What are you looking for or offering today?" class="create-post-input">
-                    <a href="create_post.php" class="btn-create-post" style="text-decoration: none;">+ Create Post</a>
+                    <a href="createPost.php" class="btn-create-post" style="text-decoration: none;">+ Create Post</a>
                 </div>
 
                 <!-- Category Filter Area -->
@@ -186,7 +176,7 @@ if ($postsResult && mysqli_num_rows($postsResult) > 0) {
                                 </div>
 
                                 <div class="footer-right">
-                                    <a href="listing_details.php?id=<?php echo $item['PostId']; ?>" class="btn-details">Details</a>
+                                    <a href="postDetails.php?id=<?php echo $item['PostId']; ?>" class="btn-details">Details</a>
                                     <span class="post-date">Posted <?php echo $formattedDate; ?></span>
                                 </div>
                             </div>

@@ -1,20 +1,10 @@
 <?php
-// session_start();
-// if (!isset($_SESSION["adminId"])) {
-//     header("Location: ../login.php");
-//     exit;
-// }
-
-// require_once "../../models/adminModel.php";
-// $active = "verification";
-// $rows   = getAllVerifications();
-
-// function initials($name)
-// {
-//     $parts   = preg_split('/\s+/', trim($name));
-//     $letters = array_map(fn($p) => substr($p, 0, 1), array_slice($parts, 0, 2));
-//     return strtoupper(implode('', $letters));
-// }
+function initials($name)
+{
+    $parts   = preg_split('/\s+/', trim($name));
+    $letters = array_map(fn($p) => substr($p, 0, 1), array_slice($parts, 0, 2));
+    return strtoupper(implode('', $letters));
+}
 ?>
 <!doctype html>
 <html lang="en">

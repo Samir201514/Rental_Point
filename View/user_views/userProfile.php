@@ -73,7 +73,9 @@
             <span> <?php echo htmlspecialchars($user["Location"]); ?> </span>
             <hr>
             <div class="editProfileDetailsBtn">
-                <button> Edit Profile Details </button>
+                <form action="editUserProfileController.php" method="GET">
+                    <button type="submit"> Edit Profile Details </button>
+                </form>
             </div>
         </section>
 

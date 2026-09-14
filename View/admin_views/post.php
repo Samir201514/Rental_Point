@@ -1,14 +1,3 @@
-<?php
-// session_start();
-// if (!isset($_SESSION["adminId"])) {
-//     header("Location: ../login.php");
-//     exit;
-// }
-
-// require_once "../../models/adminModel.php";
-// $active = "posts";
-// $posts  = getAllPosts();
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -44,7 +33,6 @@
             <th>Posted By</th>
             <th>Location</th>
             <th>Price</th>
-            <th>Status</th>
             <th>Created Date</th>
             <th>Actions</th>
           </tr>
@@ -57,14 +45,15 @@
             <td><?= htmlspecialchars($p["PosterName"]) ?></td>
             <td><?= htmlspecialchars($p["Location"]) ?></td>
             <td>&#2547;<?= number_format($p["MonthlyRent"]) ?>/mo</td>
-            <td><span class="badge badge-<?= strtolower($p["Status"]) ?>"><?= htmlspecialchars($p["Status"]) ?></span></td>
             <td><?= htmlspecialchars(date("M d, Y", strtotime($p["CreatedAt"]))) ?></td>
             <td>
               <a href="#" class="link-view">View</a>
               <a href="#"
-                 class="link-remove open-remove-modal"
-                 data-id="<?= (int) $p["id"] ?>"
-                 data-label="<?= htmlspecialchars($p["post_code"] . ': ' . $p["title"]) ?>">Remove</a>
+                class="link-remove open-remove-modal"
+                data-id="<?= (int) $p["PostId"] ?>"
+                data-label="<?= htmlspecialchars($p["PostId"] . ': ' . $p["Title"]) ?>">
+                Remove
+              </a>
             </td>
           </tr>
           <?php endforeach; ?>

@@ -13,7 +13,6 @@ if (!isset($_SESSION["UserId"])) {
 
 $userId = $_SESSION["UserId"];
 
-// ---- GET: load current data to prefill the Edit Profile form ----
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     $user = getUserById($conn, $userId);
     $userPref = array();
@@ -24,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit();
 }
 
-// ---- POST: save changes ----
 if (isset($_POST["name"])) {
     $name = trim($_POST["name"]);
 } else {
@@ -63,7 +61,6 @@ if (empty($location)) {
     $errors["location"] = "Current Location is required";
 }
 
-// Keep existing photo unless a new one is uploaded
 $existingUser = getUserById($conn, $userId);
 $profilePhoto = $existingUser["ProfilePhoto"];
 
@@ -118,7 +115,6 @@ if (!empty($errors)) {
 
 updateUser($conn, $profilePhoto, $name, $gender, $phone, $location, $userId);
 
-// Tenant also updates their UserPreference
 if ($existingUser["UserTypeId"] == 3) {
     if (isset($_POST["looking_for"])) {
         $lookingFor = $_POST["looking_for"];

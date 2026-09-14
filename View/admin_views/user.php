@@ -1,19 +1,10 @@
 <?php
-// session_start();
-// if (!isset($_SESSION["adminId"])) {
-//     header("Location: ../login.php");
-//     exit;
-// }
-
-// $active = "users";
-// $users  = getAllUsers();
-
-// function initials($name)
-// {
-//     $parts   = preg_split('/\s+/', trim($name));
-//     $letters = array_map(fn($p) => substr($p, 0, 1), array_slice($parts, 0, 2));
-//     return strtoupper(implode('', $letters));
-// }
+function initials($name)
+{
+    $parts   = preg_split('/\s+/', trim($name));
+    $letters = array_map(fn($p) => substr($p, 0, 1), array_slice($parts, 0, 2));
+    return strtoupper(implode('', $letters));
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -61,7 +52,7 @@
             <td><?php echo $u["TypeName"] ?></td>
             <td><span class="badge badge-<?= strtolower($u["Gender"]) ?>"><?= htmlspecialchars($u["Gender"]) ?></span></td>
             <td>
-              <form method="post" action="../../controllers/userControls.php" class="confirm-form">
+              <form method="post" action="../../Controller/userController.php" class="confirm-form">
                 <input type="hidden" name="id" value="<?= (int) $u["UserId"] ?>">
                 <button type="submit" class="link-remove btn-link">Remove User</button>
               </form>

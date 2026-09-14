@@ -1,14 +1,3 @@
-<?php
-// session_start();
-// if (!isset($_SESSION["adminId"])) {
-//     header("Location: ../login.php");
-//     exit;
-// }
-
-// require_once "../../models/adminModel.php";
-// $active = "reports";
-// $rows   = getAllReports();
-?>
 <!doctype html>
 <html lang="en">
 <head>

@@ -1,111 +1,789 @@
-body{
-    background-color: #FAF8F5;
+/* =========================================================
+   Rental Point — User Profile
+   Style merged from:
+     • admin "Reset / Layout" sheet
+     • public "Feed" sheet
+   HTML markup (IDs, classes, PHP) is left untouched.
+   ========================================================= */
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#userIntroTab{
-    text-align: center;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f5f7;
+  color: #222;
+  line-height: 1.6;
 }
 
-#btnSection{
-    margin: 15px;
-    padding: 15px;
-    border-radius: 20px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.btn{
-    text-decoration: none;
-    color: rgba(111, 185, 135, 1);
-    display: inline-block;
+img {
+  max-width: 100%;
 }
 
-hr{
-    border: 1px solid rgba(111, 185, 135, 1);
+/* ---------- Page shell ---------- */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 0;
 }
 
-#activityTab, #postsTab, #savedTab, #settingsTab, #popupBg, #changePasswordPopup, #logoutPopup, #deleteAccountPopup{
-    display: none;
+footer {
+  background-color: #faf9f6;
+  border-top: 1px solid #e5e7eb;
+  padding: 20px 0;
+  margin-top: 40px;
 }
 
-#userIntroTab, #propertyVerifyTab, #aboutTab, #activityTab, #postsTab,  #savedTab, #settingsTab, #userPrefTab, #updateInfoBtn{
-    margin: 25px;
-    padding: 25px;
-    border: 2px solid rgba(111, 185, 135, 1);
-    border-radius: 20px;
-    background-color: rgb(227, 238, 227);
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 26px 16px 0;
 }
 
-.data{
-    text-align: right;
+/* ---------- Generic dividers & headings ---------- */
+hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 16px 0;
 }
 
-
-#viewCounts{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+main h3 {
+  font-size: 17px;
+  color: #1c2230;
+  margin-bottom: 10px;
 }
 
-.counts{
-    text-align: center;
-    width: 500px;
-    padding: 15px;
-    margin: 10px;
-    border: 2px solid rgba(111, 185, 135, 1);
-    border-radius: 10%;
-    background-color:#FFFFFF;
+/* ---------- Tabs / popups hidden by default (JS toggles them) ---------- */
+#activityTab,
+#postsTab,
+#savedTab,
+#settingsTab,
+#popupBg,
+#changePasswordPopup,
+#logoutPopup,
+#deleteAccountPopup {
+  display: none;
 }
 
-.numbers{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 36px;
+/* ---------- Tab navigation buttons ---------- */
+#btnSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ead8c3;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 0 auto 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-#popupBg{
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(102, 102, 102, 1);
-    
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
-
-    opacity: 0.6;
+#btnSection hr {
+  flex-basis: 100%;
+  margin: 4px 0 0;
 }
 
-#changePasswordPopup{
-    width: 250px;
-    padding: 15px;
-    border: 2px solid rgba(111, 185, 135, 1);
-    background-color: #FAF8F5;
-
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 10;
+.btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid #3ecf8e;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #2d8a56;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    transform 0.15s ease;
 }
 
-#logoutPopup{
-    width: 250px;
-    padding: 15px;
-    border: 2px solid red;
-    background-color: rgba(254, 236, 236, 1);
-
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 10;
+.btn:hover {
+  background-color: #3ecf8e;
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
-#deleteAccountPopup{
-    width: 250px;
-    padding: 15px;
-    border: 2px solid red;
-    background-color: rgba(254, 236, 236, 1);
+.btn.active {
+  background-color: #3ecf8e;
+  color: #ffffff;
+}
 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 10;
+/* ---------- Section cards ---------- */
+#userIntroTab,
+#propertyVerifyTab,
+#aboutTab,
+#userPrefTab,
+#activityTab,
+#postsTab,
+#savedTab,
+#settingsTab,
+#updateInfoBtn {
+  max-width: 1000px;
+  margin: 0 auto 24px;
+  padding: 26px;
+  background-color: #ffffff;
+  border: 1px solid #ead8c3;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- Intro / profile header ---------- */
+#userIntroTab {
+  text-align: center;
+}
+
+#userIntroTab img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 14px;
+  border: 4px solid #3ecf8e;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  background-color: #eef0f3;
+}
+
+#userIntroTab h2 {
+  font-size: 24px;
+  color: #1c2230;
+  margin-bottom: 10px;
+}
+
+#userIntroTab h2 i {
+  font-style: italic;
+}
+
+#userIntroTab span {
+  display: inline-block;
+  padding: 4px 12px;
+  margin: 0 4px 6px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #e2f8ec;
+  color: #1a9c5c;
+}
+
+/* location line (last span) reads as plain text */
+#userIntroTab span:last-of-type {
+  background-color: transparent;
+  color: #6b7280;
+  font-weight: 400;
+  font-size: 13px;
+  padding: 4px 0;
+}
+
+/* the "." separator span — hidden */
+#userIntroTab span:nth-last-of-type(2) {
+  display: none;
+}
+
+/* ---------- Property verification ---------- */
+#propertyVerifyTab span {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+input[type="file"] {
+  font-size: 13px;
+  color: #4b5563;
+  padding: 8px 0;
+  width: 100%;
+  max-width: 420px;
+}
+
+input[type="file"]::file-selector-button {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  margin-right: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #e2f8ec;
+  color: #1a9c5c;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #d3f1e0;
+}
+
+/* ---------- Generic form controls ---------- */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+textarea,
+select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #d7dae0;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #222;
+  background-color: #ffffff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #3ecf8e;
+  box-shadow: 0 0 0 3px rgba(62, 207, 142, 0.15);
+}
+
+/* ---------- Buttons ---------- */
+button,
+input[type="submit"],
+input[type="button"] {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: #3ecf8e;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: #33b97c;
+}
+
+/* ---------- About / Preference rows ---------- */
+#aboutTab span,
+#userPrefTab span {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+#aboutTab span:nth-of-type(odd),
+#userPrefTab span:nth-of-type(odd) {
+  color: #6b7280;
+}
+
+#aboutTab span:nth-of-type(even),
+#userPrefTab span:nth-of-type(even) {
+  float: right;
+  font-weight: 600;
+  color: #1c2230;
+}
+
+#aboutTab hr,
+#userPrefTab hr {
+  clear: both;
+  border-top: 1px solid #f0f1f3;
+  margin: 10px 0;
+}
+
+.editProfileDetailsBtn {
+  clear: both;
+  margin-top: 18px;
+}
+
+.editProfileDetailsBtn button {
+  background-color: #3ecf8e;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.editProfileDetailsBtn button:hover {
+  background-color: #33b97c;
+}
+
+/* ---------- Activity: stat cards ---------- */
+#viewCounts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 18px;
+}
+
+.counts {
+  flex: 1 1 180px;
+  text-align: center;
+  padding: 20px 15px;
+  border: 1px solid #ead8c3;
+  border-radius: 14px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.counts > span:first-child {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.numbers {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 34px;
+  font-weight: bold;
+  color: #2d8a56;
+}
+
+/* ---------- Tables ---------- */
+#viewPerPost,
+#bookingRequests {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead th {
+  text-align: left;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 12px 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tbody td {
+  padding: 13px 10px;
+  border-bottom: 1px solid #f0f1f3;
+  color: #374151;
+  vertical-align: top;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* ---------- Booking request action buttons ---------- */
+#bookingRequests form {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+form[action*="bookingAction"] button[value="Rejected"] {
+  background-color: #fde2e2;
+  color: #d1453b;
+}
+
+form[action*="bookingAction"] button[value="Rejected"]:hover {
+  background-color: #f8d0d0;
+}
+
+form[action*="bookingAction"] button[value="Approved"] {
+  background-color: #3ecf8e;
+  color: #ffffff;
+}
+
+/* ---------- Reports & support tickets ---------- */
+#myReports > div,
+#mySupports > div {
+  background-color: #ffffff;
+  border: 1px solid #f0f1f3;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+#myReports p,
+#mySupports p {
+  font-size: 13px;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+
+#myReports p:last-child,
+#mySupports p:last-child {
+  margin-bottom: 0;
+}
+
+#mySupports > button {
+  margin-bottom: 16px;
+}
+
+/* ---------- Post cards (My Posts / Saved Posts) ---------- */
+#postCard {
+  background-color: #ffffff;
+  border: 1px solid #ead8c3;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#postCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+#postCard > div:first-child {
+  position: relative;
+  background-color: #eef0f3;
+}
+
+#postCard > div:first-child img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+#postCard > div:first-child > span {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  background-color: #e2f8ec;
+  color: #1a9c5c;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* posts without an image: keep the type tag inline, no empty grey band */
+#postCard > div:first-child:not(:has(img)) {
+  position: static;
+  background-color: transparent;
+  padding: 16px 18px 0;
+}
+
+#postCard > div:first-child:not(:has(img)) > span {
+  position: static;
+}
+
+#postCard > p {
+  padding: 0 18px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+#postCard > p:nth-of-type(1) {
+  padding-top: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #111111;
+}
+
+#postCard > p:nth-of-type(2) {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2d8a56;
+}
+
+#postCard > p:nth-of-type(3) {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+#postCard > p:nth-of-type(4) {
+  margin-top: 6px;
+  font-weight: 600;
+  color: #333333;
+}
+
+#postCard > p:nth-of-type(5) {
+  font-size: 12px;
+  color: #888888;
+}
+
+#postCard > p:nth-of-type(6) {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+#postCard p span {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background-color: #e2f8ec;
+  color: #1a9c5c;
+  font-size: 10px;
+  font-weight: normal;
+}
+
+#postCard hr {
+  margin: 12px 18px;
+  border-top: 1px solid #f0f0f0;
+}
+
+#postCard > div:last-child {
+  padding: 4px 18px 18px;
+}
+
+#postCard form {
+  margin-right: 8px;
+}
+
+#postCard button {
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+form[action*="editPost"] button {
+  background-color: #eef0f3;
+  color: #374151;
+}
+
+form[action*="editPost"] button:hover {
+  background-color: #e2e5ea;
+}
+
+form[action*="deletePost"] button,
+form[action*="toggleSave"] button {
+  background-color: #fde2e2;
+  color: #d1453b;
+}
+
+form[action*="deletePost"] button:hover,
+form[action*="toggleSave"] button:hover {
+  background-color: #f8d0d0;
+}
+
+form[action*="postDetails"] button {
+  background-color: #e2f8ec;
+  color: #1a9c5c;
+}
+
+form[action*="postDetails"] button:hover {
+  background-color: #d3f1e0;
+}
+
+/* Create-new-post button */
+#postsTab > button {
+  margin-bottom: 16px;
+}
+
+/* ---------- Settings ---------- */
+#settingsTab button,
+#settingsTab .editProfileDetailsBtn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  background-color: #f9fafb;
+  color: #374151;
+  border: 1px solid #f0f1f3;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#settingsTab button:hover,
+#settingsTab .editProfileDetailsBtn:hover {
+  background-color: #e2f8ec;
+  color: #1a9c5c;
+  border-color: #c9ecd9;
+}
+
+#settingsTab #LogoutBtn,
+#settingsTab #deleteAccountBtn {
+  color: #d1453b;
+}
+
+#settingsTab #LogoutBtn:hover,
+#settingsTab #deleteAccountBtn:hover {
+  background-color: #fde2e2;
+  border-color: #f7cfcf;
+  color: #d1453b;
+}
+
+/* ---------- Popups ---------- */
+#popupBg {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 18, 26, 0.55);
+  z-index: 1;
+}
+
+#changePasswordPopup,
+#logoutPopup,
+#deleteAccountPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  max-width: calc(100% - 32px);
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+#changePasswordPopup {
+  border-top: 4px solid #3ecf8e;
+}
+
+#logoutPopup,
+#deleteAccountPopup {
+  border-top: 4px solid #ef4444;
+}
+
+#changePasswordPopup h3,
+#logoutPopup h3,
+#deleteAccountPopup h3 {
+  font-size: 18px;
+  color: #1c2230;
+  margin-bottom: 12px;
+}
+
+#logoutPopup h3,
+#deleteAccountPopup h3 {
+  color: #d1453b;
+}
+
+/* close "X" button */
+#changePasswordPopup > button:first-child,
+#logoutPopup > button:first-child,
+#deleteAccountPopup > button:first-child {
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #eef0f3;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1;
+}
+
+#changePasswordPopup > button:first-child:hover,
+#logoutPopup > button:first-child:hover,
+#deleteAccountPopup > button:first-child:hover {
+  background-color: #e2e5ea;
+  color: #374151;
+}
+
+#changePasswordPopup hr,
+#logoutPopup hr,
+#deleteAccountPopup hr {
+  border-top: 1px solid #f0f1f3;
+  margin: 12px 0;
+}
+
+#changePasswordPopup label {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+  margin: 10px 0 4px;
+}
+
+#logoutPopup span,
+#deleteAccountPopup span {
+  display: block;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+#cancelChangePasswordBtn,
+#cancelLogoutBtn,
+#cancelDeleteBtn {
+  background-color: #eef0f3;
+  color: #374151;
+  margin-right: 8px;
+}
+
+#cancelChangePasswordBtn:hover,
+#cancelLogoutBtn:hover,
+#cancelDeleteBtn:hover {
+  background-color: #e2e5ea;
+}
+
+#changePasswordPopup input[type="submit"],
+#confirmLogoutBtn {
+  background-color: #3ecf8e;
+  color: #ffffff;
+}
+
+#confirmLogoutBtn,
+#deleteAccountPopup button[type="submit"] {
+  background-color: #e34b3f;
+  color: #ffffff;
+}
+
+#confirmLogoutBtn:hover,
+#deleteAccountPopup button[type="submit"]:hover {
+  background-color: #d1453b;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 850px) {
+  main {
+    padding: 18px 12px 0;
+  }
+
+  #userIntroTab,
+  #propertyVerifyTab,
+  #aboutTab,
+  #userPrefTab,
+  #activityTab,
+  #postsTab,
+  #savedTab,
+  #settingsTab {
+    padding: 20px 16px;
+  }
+
+  #viewCounts {
+    flex-direction: column;
+  }
+
+  #aboutTab span:nth-of-type(even),
+  #userPrefTab span:nth-of-type(even) {
+    float: none;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  #aboutTab span:nth-of-type(odd),
+  #userPrefTab span:nth-of-type(odd) {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  #aboutTab hr,
+  #userPrefTab hr {
+    margin: 12px 0;
+  }
 }

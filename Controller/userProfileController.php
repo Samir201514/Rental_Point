@@ -4,10 +4,6 @@ session_start();
 require_once "../Model/dbConnect.php";
 require_once "../Model/userProfileModel.php";
 
-if (!isset($_SESSION["UserId"])) {
-    header("Location: ../View/login.php");
-    exit();
-}
 
 $userId = $_SESSION["UserId"];
 
