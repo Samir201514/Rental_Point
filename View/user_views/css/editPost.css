@@ -1,0 +1,91 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+        }
+
+        form {
+            background-color: white;
+            width: 85%;
+            margin: auto;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        label {
+            display: inline-block;
+            width: 140px;
+            margin-bottom: 10px;
+        }
+
+        input, select, textarea {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 250px;
+        }
+
+        textarea {
+            width: 400px;
+            height: 120px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"],
+        input[type="file"] {
+            width: auto;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+        }
+
+        input[type="reset"] {
+            background-color: gray;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
