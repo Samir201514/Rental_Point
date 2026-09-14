@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ../Controller/userController.php");
             } 
             else {
-                header("Location: ../Controller/userProfileController.php");
+                header("Location: ../Controller/home.php");
             }
 
             exit();
